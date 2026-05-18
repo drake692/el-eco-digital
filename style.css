@@ -1,0 +1,194 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilo General - VANDAL RANDOM */
+body {
+    background-color: #ffffff; 
+    color: #000000; 
+    font-family: 'Impact', 'Arial Black', sans-serif; /* Cambio de fuente a una más urbana */
+    margin: 0;
+    padding: 10px;
+}
+
+/* Encabezado y Navegación */
+header {
+    background-color: #1B4D3E; /* Fondo verde para contraste masivo */
+    border: 4px solid #000000; /* Bordes gruesos estilo cómic/vandal */
+    padding: 25px;
+    text-align: left;
+    transform: rotate(-1deg); /* Ligera inclinación 'random' */
+    margin-bottom: 20px;
+}
+
+nav {
+    background-color: #000000; /* Fondo negro */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+    border: 3px solid #1B4D3E;
+    transform: rotate(1deg); /* Inclinación opuesta */
+}
+
+nav a {
+    color: #ffffff; 
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    color: #000000; 
+    background-color: #ffffff; /* Efecto invertido agresivo */
+}
+
+/* Etiquetas de categoría - Estilo Sticker */
+.tag {
+    background-color: #000000; 
+    color: #ffffff; 
+    padding: 6px 12px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border: 2px solid #1B4D3E;
+    border-radius: 0px; /* Esquinas rectas y rudas */
+    text-transform: uppercase;
+    display: inline-block;
+    transform: skewX(-10deg); /* Efecto de velocidad/diseño gaming */
+}
+
+/* Diseño de la Noticia Principal */
+.main-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    padding: 20px;
+}
+
+.noticia-principal {
+    border: 4px solid #000000;
+    padding: 25px;
+    background: #ffffff;
+    box-shadow: 8px 8px 0px #1B4D3E; /* Sombra sólida bloque sin difuminar */
+}
+
+.noticia-principal h1 {
+    font-size: 3rem;
+    margin-top: 15px;
+    color: #000000;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.subtitulo {
+    font-family: 'Segoe UI', sans-serif; /* Mantener legible el texto largo */
+    color: #222222; 
+    font-size: 1.3rem;
+    border-left: 5px solid #1B4D3E;
+    padding-left: 15px;
+}
+
+/* Artículos relacionados (Barra lateral) */
+.relacionados {
+    background: #f0f0f0;
+    border: 4px solid #000000;
+    padding: 20px;
+    box-shadow: -8px 8px 0px #000000;
+}
+
+.relacionados h3 {
+    border-bottom: 4px dashed #1B4D3E; /* Línea discontinua rebelde */
+    padding-bottom: 10px;
+    color: #000000;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.mini-noticia {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: center;
+}
+
+.mini-noticia img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border: 3px solid #000000;
+    border-radius: 0px;
+}
+
+/* Quitar el estilo de enlace predeterminado */
+.mini-noticia-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.mini-noticia-link:hover {
+    background-color: #1B4D3E; 
+    color: #ffffff; /* El bloque cambia a verde con texto blanco */
+    transform: scale(1.02) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mini-noticia-link:hover .titulo-relacionado {
+    color: #ffffff; 
+}
+
+.titulo-relacionado {
+    font-size: 1rem;
+    margin: 5px 0;
+    font-weight: bold;
+    line-height: 1.1;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+/* Diseño Responsivo - Fuerza las noticias abajo solo en celulares */
+@media (max-width: 768px) {
+    .main-container {
+        display: block; /* Rompe las columnas de escritorio para que caigan por gravedad */
+        padding: 10px;
+    }
+    
+    .noticia-principal {
+        margin-bottom: 30px; /* Separa la noticia principal de los artículos relacionados abajo */
+    }
+
+    header, nav, .noticia-principal, .relacionados {
+        transform: none; /* Evita que el diseño se corte o desborde en pantallas chicas */
+        box-shadow: 5px 5px 0px #000000; /* Mantiene la estética de bloque sólido a escala */
+    }
+
+    .noticia-principal h1 {
+        font-size: 2.2rem;
+    }
+
+    .mini-noticia {
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .titulo-relacionado {
+        font-size: 0.95rem;
+    }
+}
+
+    /* Añadir esto dentro de @media (max-width: 768px) para mejorar el menú */
+    nav {
+        justify-content: center; /* Centra los botones del menú en pantallas chicas */
+        gap: 10px; /* Reduce ligeramente el espacio para que quepan mejor */
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 0.9rem; /* Hace los enlaces un poco más compactos en móvil */
+        padding: 4px 8px;
+    }
