@@ -2,14 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Deportes - El Eco Digital</title>
+    <title>Cultura - El Eco Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>El Eco Digital</h1>
-        <p>Pasión y Adrenalina</p>
+        <h1>EL ECO DIGITAL</h1>
+        <p>Arte, Música y Tradiciones</p>
     </header>
 
     <nav>
@@ -17,49 +17,40 @@
        <a href="tecnologia.html">Tecnología</a>
        <a href="deportes.html">Deportes</a>
        <a href="cultura.html">Cultura</a>
-       <a href="comida.html">Cultura</a>
-       <a href="moda.html">Cultura</a>
-       <a href="musica.html">Cultura</a>
+       <!-- Corrección de nombres repetidos en el menú -->
+       <a href="comida.html">Comida</a>
+       <a href="moda.html">Moda</a>
+       <a href="musica.html">Música</a>
     </nav>
 
+    <!-- INICIO CONTENEDOR PRINCIPAL -->
     <div class="main-container">
-        <main>
-            <!-- Noticia Destacada -->
+        <!-- Adaptación a las clases correctas de tu CSS para conservar el estilo Vandal -->
+        <main class="noticia-principal">
             <article class="noticia">
-                <h2>¡Hazaña Histórica! Nuevo Récord en los 100 metros</h2>
-                <img src="https://cdn.zendalibros.com/wp-content/uploads/usain-bolt.jpeg" alt="Carrera de atletismo">
-                <p>En una noche inolvidable, el velocista local logró superar la marca mundial por dos centésimas de segundo. La multitud en el estadio nacional celebró de pie este hito que pone al país en la cima del deporte internacional.</p>
+                <span class="tag">Arte</span>
+                <h1>El Renacimiento del Arte Digital</h1>
+                <img src="https://i0.wp.com/culturaconectada.com/wp-content/uploads/2024/11/quantum-memories.jpg?fit=1200%2C800&ssl=1&w=640" alt="Arte" style="width: 100%; border-radius: 4px; margin: 20px 0;">
+                <p>Galerías de todo el mundo están abriendo sus puertas a exposiciones de arte generativo y realidad virtual, permitiendo al público "entrar" literalmente en los cuadros de los artistas más famosos.</p>
             </article>
 
-            <!-- Noticia Secundaria -->
-            <article class="noticia">
-                <h2>Fútbol: El clásico se queda en casa</h2>
-                <p>Con un gol de último minuto, el equipo local venció a su eterno rival en un partido lleno de emociones. Con este resultado, se aseguran el primer lugar de la liga a falta de dos jornadas.</p>
+            <article class="noticia" style="margin-top: 40px; border-top: 4px dashed #1B4D3E; padding-top: 20px;">
+                <span class="tag">Cine</span>
+                <h1 style="font-size: 2.2rem; margin-top: 15px;">Festivales de Cine este Mes</h1>
+                <p>Este fin de semana arranca el festival internacional con más de 50 películas independientes que buscan ganar el premio a la mejor dirección.</p>
             </article>
+            
+            <!-- Tu bloque de Agenda Cultural integrado de forma limpia aquí dentro -->
+            <section class="secciones" style="margin-top: 40px; background: #f0f0f0; padding: 15px; border: 3px solid #000;">
+                <h3 style="text-transform: uppercase; margin: 0 0 10px 0;">Agenda Cultural</h3>
+                <ul style="padding-left: 20px; font-family: 'Segoe UI', sans-serif;">
+                    <li>Conciertos de temporada</li>
+                    <li>Museos gratis los domingos</li>
+                </ul>
+            </section>
         </main>
 
-        <aside>
-            <!-- Tabla de posiciones usando la clase de tu CSS -->
-            <section class="secciones">
-                <h3>Tabla de Posiciones</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="border-bottom: 1px solid #ddd; padding: 5px 0;"><strong>1. Águilas</strong> - 28 pts</li>
-                    <li style="border-bottom: 1px solid #ddd; padding: 5px 0;"><strong>2. Tigres</strong> - 25 pts</li>
-                    <li style="border-bottom: 1px solid #ddd; padding: 5px 0;"><strong>3. Rayos</strong> - 22 pts</li>
-                </ul>
-            </section>
-
-            <section class="secciones" style="margin-top: 20px;">
-                <h3>Próximos Eventos</h3>
-                <ul>
-                    <li>Maratón Ciudad - Dom</li>
-                    <li>Final Tenis - Sáb</li>
-                </ul>
-            </section>
-        </aside>
-    </div>
-
-     <!-- BARRA LATERAL (Lado derecho - Artículos Relacionados) -->
+        <!-- BARRA LATERAL DE ARTÍCULOS RELACIONADOS (Ubicada correctamente dentro de main-container) -->
         <aside class="relacionados">
            <h3>Artículos relacionados</h3>
     
@@ -97,11 +88,13 @@
            </a>
        </aside>
    </div>
-   
+   <!-- FIN CONTENEDOR PRINCIPAL -->
+
     <footer>
-        <p>&copy; 2024 Mi Periódico Digital | Sección Deportes</p>
+        <p>&copy; 2026 El Eco Digital | Sección Cultura</p>
     </footer>
 
 </body>
 </html>
+
 
