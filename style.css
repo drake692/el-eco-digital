@@ -151,44 +151,69 @@ nav a:hover {
     text-transform: uppercase;
 }
 
-/* Diseño Responsivo - Fuerza las noticias abajo solo en celulares */
+/* DISEÑO RESPONSIVO - IMPACTO MÁXIMO EN MÓVILES */
 @media (max-width: 768px) {
+    body {
+        padding: 5px; /* Menos espacio en los bordes de la pantalla */
+    }
+
     .main-container {
-        display: block; /* Rompe las columnas de escritorio para que caigan por gravedad */
-        padding: 10px;
+        display: flex;
+        flex-direction: column; /* Apila la barra lateral abajo de la principal */
+        gap: 40px; /* Más separación entre bloques */
+        padding: 5px;
     }
     
     .noticia-principal {
-        margin-bottom: 30px; /* Separa la noticia principal de los artículos relacionados abajo */
+        margin-bottom: 0px; 
+        padding: 15px; /* Más compacto por dentro */
     }
 
-    header, nav, .noticia-principal, .relacionados {
-        transform: none; /* Evita que el diseño se corte o desborde en pantallas chicas */
-        box-shadow: 5px 5px 0px #000000; /* Mantiene la estética de bloque sólido a escala */
-    }
-
+    /* Fuentes masivas e hiper-grandes en celular */
     .noticia-principal h1 {
-        font-size: 2.2rem;
+        font-size: 3.5rem; /* ¡Más grande que en escritorio para estilo rebelde! */
+        line-height: 0.9;
+        word-break: break-word; /* Evita que las palabras largas se corten */
+    }
+
+    .subtitulo {
+        font-size: 1.5rem; /* Texto secundario más legible y grande */
+    }
+
+    /* Quita inclinaciones para evitar desbordamiento en pantallas chicas */
+    header, nav, .noticia-principal, .relacionados {
+        transform: none !important; 
+        box-shadow: 6px 6px 0px #000000; /* Mantiene sombras duras */
+    }
+
+    /* Formato de la lista de artículos de abajo */
+    .relacionados {
+        padding: 15px;
+    }
+
+    .relacionados h3 {
+        font-size: 2.2rem; /* Título de sección gigante */
     }
 
     .mini-noticia {
-        gap: 15px;
+        gap: 10px;
         margin-bottom: 20px;
     }
 
     .titulo-relacionado {
-        font-size: 0.95rem;
+        font-size: 1.2rem; /* Títulos de abajo más grandes y llamativos */
     }
-}
 
-    /* Añadir esto dentro de @media (max-width: 768px) para mejorar el menú */
+    /* Corrección del menú de navegación que estaba roto */
     nav {
-        justify-content: center; /* Centra los botones del menú en pantallas chicas */
-        gap: 10px; /* Reduce ligeramente el espacio para que quepan mejor */
+        justify-content: center; 
+        gap: 8px; 
         padding: 10px;
+        transform: none !important;
     }
 
     nav a {
-        font-size: 0.9rem; /* Hace los enlaces un poco más compactos en móvil */
-        padding: 4px 8px;
+        font-size: 1.1rem; /* Enlaces grandes y fáciles de tocar con el dedo */
+        padding: 6px 10px;
     }
+}
