@@ -8,7 +8,7 @@
 <body>
 
     <header>
-        <h1>El Eco Digital</h1>
+        <h1>EL ECO DIGITAL</h1>
         <p>Arte, Música y Tradiciones</p>
     </header>
 
@@ -17,37 +17,40 @@
        <a href="tecnologia.html">Tecnología</a>
        <a href="deportes.html">Deportes</a>
        <a href="cultura.html">Cultura</a>
-       <a href="comida.html">Cultura</a>
-       <a href="moda.html">Cultura</a>
-       <a href="musica.html">Cultura</a>
+       <!-- Corrección de nombres repetidos en el menú -->
+       <a href="comida.html">Comida</a>
+       <a href="moda.html">Moda</a>
+       <a href="musica.html">Música</a>
     </nav>
 
+    <!-- INICIO CONTENEDOR PRINCIPAL -->
     <div class="main-container">
-        <main>
+        <!-- Adaptación a las clases correctas de tu CSS para conservar el estilo Vandal -->
+        <main class="noticia-principal">
             <article class="noticia">
-                <h2>El Renacimiento del Arte Digital</h2>
-                <img src="https://i0.wp.com/culturaconectada.com/wp-content/uploads/2024/11/quantum-memories.jpg?fit=1200%2C800&ssl=1&w=640" alt="Arte">
+                <span class="tag">Arte</span>
+                <h1>El Renacimiento del Arte Digital</h1>
+                <img src="https://i0.wp.com/culturaconectada.com/wp-content/uploads/2024/11/quantum-memories.jpg?fit=1200%2C800&ssl=1&w=640" alt="Arte" style="width: 100%; border-radius: 4px; margin: 20px 0;">
                 <p>Galerías de todo el mundo están abriendo sus puertas a exposiciones de arte generativo y realidad virtual, permitiendo al público "entrar" literalmente en los cuadros de los artistas más famosos.</p>
             </article>
 
-            <article class="noticia">
-                <h2>Festivales de Cine este Mes</h2>
+            <article class="noticia" style="margin-top: 40px; border-top: 4px dashed #1B4D3E; padding-top: 20px;">
+                <span class="tag">Cine</span>
+                <h1 style="font-size: 2.2rem; margin-top: 15px;">Festivales de Cine este Mes</h1>
                 <p>Este fin de semana arranca el festival internacional con más de 50 películas independientes que buscan ganar el premio a la mejor dirección.</p>
             </article>
-        </main>
-
-        <aside>
-            <section class="secciones">
-                <h3>Agenda Cultural</h3>
-                <ul>
-                    <li>Conciertos</li>
-                    <li>Museos gratis</li>
+            
+            <!-- Tu bloque de Agenda Cultural integrado de forma limpia aquí dentro -->
+            <section class="secciones" style="margin-top: 40px; background: #f0f0f0; padding: 15px; border: 3px solid #000;">
+                <h3 style="text-transform: uppercase; margin: 0 0 10px 0;">Agenda Cultural</h3>
+                <ul style="padding-left: 20px; font-family: 'Segoe UI', sans-serif;">
+                    <li>Conciertos de temporada</li>
+                    <li>Museos gratis los domingos</li>
                 </ul>
             </section>
-        </aside>
-    </div>
+        </main>
 
-     <!-- BARRA LATERAL (Lado derecho - Artículos Relacionados) -->
+        <!-- BARRA LATERAL DE ARTÍCULOS RELACIONADOS (Ubicada correctamente dentro de main-container) -->
         <aside class="relacionados">
            <h3>Artículos relacionados</h3>
     
@@ -85,9 +88,10 @@
            </a>
        </aside>
    </div>
+   <!-- FIN CONTENEDOR PRINCIPAL -->
 
     <footer>
-        <p>&copy; 2024 Mi Periódico Digital | Sección Cultura</p>
+        <p>&copy; 2026 El Eco Digital | Sección Cultura</p>
     </footer>
 
 </body>
