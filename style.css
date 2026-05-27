@@ -99,6 +99,37 @@ nav a:hover {
     margin: 20px 0;
 }
 
+/* Estilo para las cajas de noticias relacionadas */
+.mini-noticia {
+    display: flex;
+    gap: 12px;
+    border: 2px solid var(--vandal-black);
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+.mini-noticia img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border: 1px solid var(--vandal-black);
+    flex-shrink: 0; /* Evita que la imagen se aplaste en móviles */
+}
+
+.mini-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Ajuste para el texto de relacionados */
+.titulo-relacionado {
+    font-size: 0.85rem;
+    line-height: 1.2;
+    margin: 0;
+}
 /* --- DISEÑO PARA CELULARES (MÁX 768PX) --- */
 @media (max-width: 768px) {
     
