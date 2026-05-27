@@ -268,77 +268,83 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- DISEÑO MÓVIL (MÁX 768PX) --- */
 @media (max-width: 768px) {
-    
-    /* El header necesita posición relativa para que el menú se pegue a él */
     header {
         position: relative;
-        z-index: 1001; /* Por encima de todo */
+        display: flex;
+        justify-content: center; /* Título al centro */
+        align-items: center;
+        padding: 20px 10px;
     }
 
+    /* Botón a la derecha */
     .menu-toggle {
         display: flex; 
         position: absolute;
-        left: 15px;
+        right: 15px; /* <--- Ahora a la derecha */
+        left: auto;
         top: 50%;
         transform: translateY(-50%);
     }
 
-    /* MENÚ DESPLEGABLE: Ahora flota al inicio */
+    /* La "Ventana" de secciones */
     nav {
         display: none; 
         flex-direction: column;
-        position: absolute; /* <--- Esto hace que flote */
-        top: 100%;          /* <--- Se pega justo debajo del header */
-        left: 0;
-        width: 100%;
-        z-index: 9999;      /* <--- Prioridad máxima sobre noticias e imágenes */
+        position: absolute;
+        
+        /* Posicionamiento de ventana pequeña */
+        top: 80%;           /* Un poco abajo del header */
+        right: 10px;        /* Pegada a la derecha */
+        left: auto;
+        width: 200px;       /* Ancho fijo para que parezca ventana */
+        
         background-color: var(--vandal-black);
-        border-bottom: var(--border-thickness) solid var(--main-green);
-        padding: 0;
-        box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
+        border: var(--border-thickness) solid var(--main-green);
+        z-index: 9999;
+        padding: 5px 0;
+        box-shadow: 6px 6px 0px rgba(0,0,0,0.8); /* Sombra sólida estilo Vandal */
     }
 
     nav.active {
-        display: flex; 
-        animation: vandalSlide 0.3s forwards;
+        display: flex;
+        animation: vandalPop 0.2s ease-out;
     }
 
     nav a {
-        padding: 20px;
+        padding: 12px 15px;
+        text-align: left; /* Alineado a la izquierda como lista */
         border-bottom: 1px solid #222;
-        text-align: center;
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         width: 100%;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
     }
 
-    /* Ajustes de grid para que el contenido no se rompa abajo */
+    nav a:hover {
+        background-color: var(--main-green);
+    }
+
+    /* Ajuste del contenedor para que no se mueva */
     .main-container {
         grid-template-columns: 1fr;
         padding: 15px;
-        position: relative;
-        z-index: 1; /* Por debajo del menú desplegable */
-    }
-
-    .noticia-principal {
-        padding: 20px 15px;
-        box-shadow: 4px 4px 0px var(--main-green);
     }
 
     header h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 }
 
-/* Animación más suave */
-@keyframes vandalSlide {
+/* Animación de "Aparición" rápida */
+@keyframes vandalPop {
     from { 
         opacity: 0; 
-        transform: translateY(-10px); 
+        transform: scale(0.9) translateY(-10px); 
     }
     to { 
         opacity: 1; 
-        transform: translateY(0); 
+        transform: scale(1) translateY(0); 
     }
 }
