@@ -30,9 +30,9 @@
 
     <div class="main-container">
         <main class="noticia-principal">
-            <article class="noticia">
+            <article class="noticia-cuerpo">
                 <span class="tag">Fútbol</span>
-                <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAY 2026</p>
+                <p class="fecha-publicacion">Publicado: 29 MAY 2026</p>
                 
                 <h1>El fin de los fichajes millonarios: ¿Burbuja a punto de estallar?</h1>
                 
@@ -40,18 +40,22 @@
                 
                 <p class="subtitulo">Las nuevas regulaciones financieras están obligando a los clubes europeos a priorizar la cantera sobre la chequera.</p>
                 
-                <p>Analistas sugieren que el mercado verá una caída del 30% en los traspasos durante el próximo verano, marcando el inicio de una era más austera pero competitiva donde el talento joven será el activo más valioso.</p>
+                <div class="contenido-texto">
+                    <p>Analistas sugieren que el mercado verá una caída del 30% en los traspasos durante el próximo verano, marcando el inicio de una era más austera pero competitiva donde el talento joven será el activo más valioso.</p>
+                </div>
             </article>
 
-            <article class="noticia" style="margin-top: 40px; border-top: 4px dashed var(--main-green); padding-top: 20px;">
+            <article class="noticia-secundaria">
                 <span class="tag">Motor</span>
-                <h2 style="font-size: 2.2rem; margin-top: 15px; text-transform: uppercase;">Fórmula E: El rugido eléctrico conquista las ciudades</h2>
-                <p>La tecnología de baterías ha alcanzado un punto de inflexión que permite carreras más largas y agresivas, robando audiencia a las categorías tradicionales.</p>
+                <h2>Fórmula E: El rugido eléctrico conquista las ciudades</h2>
+                <div class="contenido-texto">
+                    <p>La tecnología de baterías ha alcanzado un punto de inflexión que permite carreras más largas y agresivas, robando audiencia a las categorías tradicionales.</p>
+                </div>
             </article>
             
-            <section class="agenda-vandal" style="margin-top: 40px; background: #f0f0f0; padding: 20px; border: 4px solid #000; box-shadow: 8px 8px 0px var(--main-green);">
-                <h3 style="text-transform: uppercase; margin: 0 0 15px 0; font-size: 1.8rem; border-bottom: 2px solid #000;">Marcadores del Fin de Semana</h3>
-                <ul style="padding-left: 20px; font-family: 'Segoe UI', sans-serif; font-weight: bold; list-style-type: '⚡ ';">
+            <section class="agenda-vandal">
+                <h3>Marcadores del Fin de Semana</h3>
+                <ul class="lista-marcadores">
                     <li>Final de Grand Slam: 3 - 2 (Batalla de 5 horas)</li>
                     <li>Derbi Local: 0 - 0 (Defensas de hierro)</li>
                     <li>Maratón Mundial: Nuevo récord (1:58:12)</li>
@@ -65,9 +69,9 @@
             <a href="lentes.html" class="mini-noticia-link">
                 <div class="mini-noticia">
                     <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
-                    <div>
-                       <span class="tag" style="font-size: 0.5rem;">Gadgets</span>
-                       <p class="titulo-relacionado">Entrenando con Realidad Aumentada: El futuro del gym.</p>
+                    <div class="mini-info">
+                       <span class="tag-mini">Gadgets</span>
+                       <p class="titulo-relacionado">Entrenando con RA: El futuro del gym.</p>
                     </div>
                 </div>
              </a>
@@ -75,8 +79,8 @@
             <a href="clima.html" class="mini-noticia-link">
                 <div class="mini-noticia">
                      <img src="https://wmo.int/sites/default/files/article_bulletin/featured_media/NWP_3.png" alt="Clima IA">
-                     <div>
-                         <span class="tag" style="font-size: 0.5rem;">IA</span>
+                     <div class="mini-info">
+                         <span class="tag-mini">IA</span>
                          <p class="titulo-relacionado">Cómo la IA predice lesiones deportivas.</p>
                      </div>
                 </div>
@@ -97,7 +101,6 @@
             e.stopPropagation();
         });
 
-        // Cerrar menú al tocar fuera
         document.addEventListener('click', (e) => {
             if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('active');
@@ -107,5 +110,4 @@
 
 </body>
 </html>
-
 
