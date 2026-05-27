@@ -8,29 +8,31 @@
 <body>
 
     <header>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <h1>EL ECO DIGITAL</h1>
         <p>Arte, Música y Tradiciones</p>
     </header>
 
-    <nav>
+    <nav id="nav-menu">
        <a href="index.html">Inicio</a>
        <a href="tecnologia.html">Tecnología</a>
        <a href="deportes.html">Deportes</a>
        <a href="cultura.html">Cultura</a>
-       <!-- Corrección de nombres repetidos en el menú -->
        <a href="comida.html">Comida</a>
        <a href="moda.html">Moda</a>
        <a href="musica.html">Música</a>
     </nav>
 
-    <!-- INICIO CONTENEDOR PRINCIPAL -->
     <div class="main-container">
-        <!-- Adaptación a las clases correctas de tu CSS para conservar el estilo Vandal -->
         <main class="noticia-principal">
             <article class="noticia">
                 <span class="tag">Arte</span>
                 <h1>El Renacimiento del Arte Digital</h1>
-                <img src="https://i0.wp.com/culturaconectada.com/wp-content/uploads/2024/11/quantum-memories.jpg?fit=1200%2C800&ssl=1&w=640" alt="Arte" style="width: 100%; border-radius: 4px; margin: 20px 0;">
+                <img src="https://i0.wp.com/culturaconectada.com/wp-content/uploads/2024/11/quantum-memories.jpg?fit=1200%2C800&ssl=1&w=640" alt="Arte" style="width: 100%; border-radius: 0px; margin: 20px 0; border: 4px solid #000;">
                 <p>Galerías de todo el mundo están abriendo sus puertas a exposiciones de arte generativo y realidad virtual, permitiendo al público "entrar" literalmente en los cuadros de los artistas más famosos.</p>
             </article>
 
@@ -40,21 +42,18 @@
                 <p>Este fin de semana arranca el festival internacional con más de 50 películas independientes que buscan ganar el premio a la mejor dirección.</p>
             </article>
             
-            <!-- Tu bloque de Agenda Cultural integrado de forma limpia aquí dentro -->
-            <section class="secciones" style="margin-top: 40px; background: #f0f0f0; padding: 15px; border: 3px solid #000;">
-                <h3 style="text-transform: uppercase; margin: 0 0 10px 0;">Agenda Cultural</h3>
-                <ul style="padding-left: 20px; font-family: 'Segoe UI', sans-serif;">
+            <section class="secciones" style="margin-top: 40px; background: #f0f0f0; padding: 15px; border: 4px solid #000; box-shadow: 6px 6px 0px #1B4D3E;">
+                <h3 style="text-transform: uppercase; margin: 0 0 10px 0; font-size: 1.5rem;">Agenda Cultural</h3>
+                <ul style="padding-left: 20px; font-family: 'Segoe UI', sans-serif; font-weight: bold;">
                     <li>Conciertos de temporada</li>
                     <li>Museos gratis los domingos</li>
                 </ul>
             </section>
         </main>
 
-        <!-- BARRA LATERAL DE ARTÍCULOS RELACIONADOS (Ubicada correctamente dentro de main-container) -->
         <aside class="relacionados">
            <h3>Artículos relacionados</h3>
     
-           <!-- Noticia 1: GADGETS -->
            <a href="lentes.html" class="mini-noticia-link">
                <div class="mini-noticia">
                    <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
@@ -65,18 +64,16 @@
                </div>
             </a>
 
-           <!-- Noticia 2: IA -->
            <a href="clima.html" class="mini-noticia-link">
                <div class="mini-noticia">
                     <img src="https://wmo.int/sites/default/files/article_bulletin/featured_media/NWP_3.png" alt="Clima IA">
                     <div>
-                       <span class="tag" style="font-size: 0.5rem;">IA</span>
-                       <p class="titulo-relacionado">Algoritmos que predicen el clima con precisión total.</p>
-                   </div>
+                        <span class="tag" style="font-size: 0.5rem;">IA</span>
+                        <p class="titulo-relacionado">Algoritmos que predicen el clima con precisión total.</p>
+                    </div>
                </div>
            </a>
 
-           <!-- Noticia 3: WEB -->
            <a href="css-moderno.html" class="mini-noticia-link">
                 <div class="mini-noticia">
                     <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/10/optimize-css.jpeg" alt="CSS Web">
@@ -86,13 +83,20 @@
                    </div>
                </div>
            </a>
-       </aside>
-   </div>
-   <!-- FIN CONTENEDOR PRINCIPAL -->
-
+        </aside>
+    </div>
     <footer>
         <p>&copy; 2026 El Eco Digital | Sección Cultura</p>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>
