@@ -30,9 +30,9 @@
 
     <div class="main-container">
         <main class="noticia-principal">
-            <article class="noticia">
+            <article class="noticia-cuerpo">
                 <span class="tag">Arte</span>
-                <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAY 2026</p>
+                <p class="fecha-publicacion">Publicado: 29 MAY 2026</p>
                 
                 <h1>El Renacimiento del Arte Digital</h1>
                 
@@ -40,18 +40,20 @@
                 
                 <p class="subtitulo">Galerías de todo el mundo están abriendo sus puertas a exposiciones de arte generativo y realidad virtual.</p>
                 
-                <p>Esta nueva tendencia permite al público "entrar" literalmente en los cuadros de los artistas más famosos, transformando la observación pasiva en una experiencia inmersiva total.</p>
+                <div class="contenido-texto">
+                    <p>Esta nueva tendencia permite al público "entrar" literalmente en los cuadros de los artistas más famosos, transformando la observación pasiva en una experiencia inmersiva total.</p>
+                </div>
             </article>
 
-            <article class="noticia" style="margin-top: 40px; border-top: 4px dashed var(--main-green); padding-top: 20px;">
+            <article class="noticia-secundaria">
                 <span class="tag">Cine</span>
-                <h2 style="font-size: 2.2rem; margin-top: 15px; text-transform: uppercase;">Festivales de Cine este Mes</h2>
+                <h2>Festivales de Cine este Mes</h2>
                 <p>Este fin de semana arranca el festival internacional con más de 50 películas independientes que buscan ganar el premio a la mejor dirección y guion original.</p>
             </article>
             
-            <section class="agenda-vandal" style="margin-top: 40px; background: #f0f0f0; padding: 20px; border: 4px solid #000; box-shadow: 8px 8px 0px var(--main-green);">
-                <h3 style="text-transform: uppercase; margin: 0 0 15px 0; font-size: 1.8rem; border-bottom: 2px solid #000;">Agenda Cultural</h3>
-                <ul style="padding-left: 20px; font-family: 'Segoe UI', sans-serif; font-weight: bold; list-style: square;">
+            <section class="agenda-vandal">
+                <h3>Agenda Cultural</h3>
+                <ul>
                     <li>Conciertos de temporada: Jazz en el parque</li>
                     <li>Museos gratis los domingos (Todo el mes)</li>
                     <li>Taller de arte urbano en el centro</li>
@@ -65,8 +67,8 @@
             <a href="lentes.html" class="mini-noticia-link">
                 <div class="mini-noticia">
                     <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
-                    <div>
-                       <span class="tag" style="font-size: 0.5rem;">Gadgets</span>
+                    <div class="mini-info">
+                       <span class="tag-mini">Gadgets</span>
                        <p class="titulo-relacionado">Nuevos lentes de realidad aumentada llegan al mercado.</p>
                     </div>
                 </div>
@@ -75,8 +77,8 @@
             <a href="clima.html" class="mini-noticia-link">
                 <div class="mini-noticia">
                      <img src="https://wmo.int/sites/default/files/article_bulletin/featured_media/NWP_3.png" alt="Clima IA">
-                     <div>
-                         <span class="tag" style="font-size: 0.5rem;">IA</span>
+                     <div class="mini-info">
+                         <span class="tag-mini">IA</span>
                          <p class="titulo-relacionado">Algoritmos que predicen el clima con precisión.</p>
                      </div>
                 </div>
