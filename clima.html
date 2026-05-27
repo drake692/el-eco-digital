@@ -2,18 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IA y Clima - El Eco Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="menu-toggle" id="mobile-menu">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
         <h1>EL ECO DIGITAL</h1>
-        <p>Tecnología > Inteligencia Artificial</p>
+        <p class="seccion-texto">Tecnología > Inteligencia Artificial</p>
     </header>
     
     <nav id="nav-menu">
@@ -29,34 +30,51 @@
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">IA</span>
+            <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAY 2026</p>
+            
             <h1>Algoritmos que predicen el clima con precisión total</h1>
-            <img src="https://wmo.int/sites/default/files/article_bulletin/featured_media/NWP_3.png" alt="Clima IA" style="width: 100%; border-radius: 4px; margin: 20px 0;">
-            <p>Gracias al procesamiento de datos masivos (Big Data), los nuevos modelos de IA pueden predecir tormentas y cambios climáticos con un 99% de exactitud semanas antes de que ocurran.</p>
-            <p>Este avance salvará miles de vidas al permitir evacuaciones más precisas y una mejor gestión de la agricultura global.</p>
+            
+            <img src="https://wmo.int/sites/default/files/article_bulletin/featured_media/NWP_3.png" alt="Clima IA" class="img-noticia">
+            
+            <p class="subtitulo">Gracias al procesamiento de datos masivos (Big Data), los nuevos modelos de IA pueden predecir tormentas con un 99% de exactitud.</p>
+            
+            <p>Este avance salvará miles de vidas al permitir evacuaciones más precisas y una mejor gestión de la agricultura global. Los expertos aseguran que estamos ante la mayor revolución meteorológica desde el invento del satélite.</p>
+            
+            <p>El procesamiento se realiza en granjas de servidores alimentadas por energía solar, haciendo que la predicción no solo sea inteligente, sino también sostenible.</p>
         </main>
 
         <aside class="relacionados">
-           <h3>Artículos relacionados</h3>
-           <a href="lentes.html" class="mini-noticia-link">
-               <div class="mini-noticia">
-                   <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
-                   <div>
-                      <span class="tag" style="font-size: 0.5rem;">Gadgets</span>
-                      <p class="titulo-relacionado">Nuevos lentes de realidad aumentada llegan al mercado.</p>
-                   </div>
-               </div>
+            <h3>Artículos relacionados</h3>
+            <a href="lentes.html" class="mini-noticia-link">
+                <div class="mini-noticia">
+                    <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
+                    <div>
+                        <span class="tag" style="font-size: 0.5rem;">Gadgets</span>
+                        <p class="titulo-relacionado">Nuevos lentes de realidad aumentada llegan al mercado.</p>
+                    </div>
+                </div>
             </a>
-            </aside>
-    </div>   
+        </aside>
+    </div>    
    
-    <footer><p>&copy; 2024 El Eco Digital</p></footer>
+    <footer>
+        <p>&copy; 2026 El Eco Digital | IA & Clima</p>
+    </footer>
 
     <script>
         const menuBtn = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
 
-        menuBtn.addEventListener('click', () => {
+        menuBtn.addEventListener('click', (e) => {
             navMenu.classList.toggle('active');
+            e.stopPropagation();
+        });
+
+        // Cerrar si tocas fuera del menú
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
         });
     </script>
 </body>
