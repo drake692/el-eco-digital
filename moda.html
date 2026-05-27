@@ -2,18 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moda - El Eco Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="menu-toggle" id="mobile-menu">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
         <h1>EL ECO DIGITAL</h1>
-        <p>Estilo > Moda Futura</p>
+        <p class="seccion-texto">Estilo > Moda Futura</p>
     </header>
     
     <nav id="nav-menu">
@@ -29,48 +30,63 @@
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">Tendencias</span>
+            <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAY 2026</p>
+
             <h1>Ropa Inteligente y Textiles Biológicos dominan las pasarelas</h1>
             
-            <img src="https://conecta.tec.mx/sites/default/files/inline-images/explicar-ciencia-fashion-revolution-tec-guadalajara-1.jpg" alt="Moda Futura" style="width: 100%; border-radius: 0px; margin: 20px 0; border: 4px solid #000;">
+            <img src="https://conecta.tec.mx/sites/default/files/inline-images/explicar-ciencia-fashion-revolution-tec-guadalajara-1.jpg" alt="Moda Futura" class="img-noticia">
             
-            <p>La alta costura ha dado un giro definitivo hacia la sustentabilidad extrema. Las prendas creadas a partir de micelio de hongo que cambian de color con la temperatura corporal son la última obsesión urbana.</p>
-            <p>Diseñadores independientes integran pantallas flexibles invisibles que permiten descargar patrones digitales en tiempo real directamente sobre la tela.</p>
+            <p class="subtitulo">La alta costura ha dado un giro definitivo hacia la sustentabilidad extrema y la integración tecnológica.</p>
+
+            <p>Las prendas creadas a partir de micelio de hongo que cambian de color con la temperatura corporal son la última obsesión urbana. Ya no se trata solo de vestir, sino de portar organismos vivos que interactúan con el entorno.</p>
+            
+            <p>Diseñadores independientes integran pantallas flexibles invisibles que permiten descargar patrones digitales en tiempo real directamente sobre la tela, haciendo que un solo vestido pueda tener infinitos diseños.</p>
         </main>
 
         <aside class="relacionados">
-           <h3>Artículos relacionados</h3>
-           
-           <a href="#" class="mini-noticia-link">
-               <div class="mini-noticia">
-                   <img src="https://cdn.shopify.com/s/files/1/0040/4668/4209/files/Regina_Romero_Historia_Calzado_2.jpg?v=1724290352" alt="Cyberpunk Streetwear">
-                   <div>
-                      <span class="tag" style="font-size: 0.5rem;">Streetwear</span>
-                      <p class="titulo-relacionado">El regreso del brutalismo textil en el calzado urbano.</p>
-                   </div>
-               </div>
+            <h3>Artículos relacionados</h3>
+            
+            <a href="#" class="mini-noticia-link">
+                <div class="mini-noticia">
+                    <img src="https://cdn.shopify.com/s/files/1/0040/4668/4209/files/Regina_Romero_Historia_Calzado_2.jpg?v=1724290352" alt="Calzado brutalista">
+                    <div>
+                       <span class="tag" style="font-size: 0.5rem;">Streetwear</span>
+                       <p class="titulo-relacionado">El regreso del brutalismo textil en el calzado urbano.</p>
+                    </div>
+                </div>
             </a>
             
-           <a href="#" class="mini-noticia-link">
-               <div class="mini-noticia">
-                    <img src="https://e01-elmundo.uecdn.es/assets/multimedia/imagenes/2014/11/26/14170276479073.png" alt="Moda Digital">
-                    <div>
-                        <span class="tag" style="font-size: 0.5rem;">Digital</span>
-                        <p class="titulo-relacionado">Pasarelas virtuales: la ropa que solo existe en tus lentes RA.</p>
-                    </div>
-               </div>
-           </a>
+            <a href="lentes.html" class="mini-noticia-link">
+                <div class="mini-noticia">
+                     <img src="https://e01-elmundo.uecdn.es/assets/multimedia/imagenes/2014/11/26/14170276479073.png" alt="Moda Digital">
+                     <div>
+                         <span class="tag" style="font-size: 0.5rem;">Digital</span>
+                         <p class="titulo-relacionado">Pasarelas virtuales: la ropa que solo vive en tus lentes.</p>
+                     </div>
+                </div>
+            </a>
         </aside>
     </div>
-    <footer><p>&copy; 2026 El Eco Digital</p></footer>
+
+    <footer>
+        <p>&copy; 2026 El Eco Digital | Estilo & Futuro</p>
+    </footer>
 
     <script>
         const menuBtn = document.getElementById('mobile-menu');
-        const navBar = document.getElementById('nav-menu');
+        const navMenu = document.getElementById('nav-menu');
 
-        menuBtn.addEventListener('click', () => {
-            navBar.classList.toggle('active');
+        menuBtn.addEventListener('click', (e) => {
+            navMenu.classList.toggle('active');
+            e.stopPropagation();
+        });
+
+        // Cerrar menú si el usuario toca la noticia
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
         });
     </script>
 </body>
 </html>
-
