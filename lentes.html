@@ -2,18 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lentes RA - El Eco Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="menu-toggle" id="mobile-menu">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
         <h1>EL ECO DIGITAL</h1>
-        <p>Tecnología > Gadgets</p>
+        <p class="seccion-texto">Tecnología > Gadgets</p>
     </header>
     
     <nav id="nav-menu">
@@ -29,56 +30,62 @@
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">Gadgets</span>
+            <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAY 2026</p>
+
             <h1>Nuevos lentes de realidad aumentada llegan al mercado</h1>
             
-            <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA" style="width: 100%; border-radius: 0px; margin: 20px 0; border: 4px solid #000;">
+            <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA" class="img-noticia">
             
-            <p>La espera ha terminado. Los nuevos dispositivos de realidad aumentada prometen integrar nuestras notificaciones y mapas directamente en nuestro campo de visión de forma natural.</p>
-            <p>Expertos aseguran que este es el primer paso para reemplazar finalmente a los smartphones en la próxima década.</p>
+            <p class="subtitulo">La espera ha terminado: la información digital se integra directamente en tu campo de visión natural.</p>
+
+            <p>Estos dispositivos prometen integrar nuestras notificaciones, mapas y traductores en tiempo real directamente frente a nuestros ojos. Expertos aseguran que este es el primer paso real para reemplazar finalmente a los smartphones en la próxima década.</p>
+            
+            <p>La miniaturización de los componentes ha permitido que el diseño sea casi indistinguible de unos lentes convencionales, eliminando la barrera estética que frenó a modelos anteriores.</p>
         </main>
 
         <aside class="relacionados">
-           <h3>Artículos relacionados</h3>
+            <h3>Artículos relacionados</h3>
     
-           <a href="lentes.html" class="mini-noticia-link">
-               <div class="mini-noticia">
-                   <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
-                   <div>
-                      <span class="tag" style="font-size: 0.5rem;">Gadgets</span>
-                      <p class="titulo-relacionado">Nuevos lentes de realidad aumentada llegan al mercado.</p>
-                   </div>
-               </div>
-            </a>
-
-           <a href="clima.html" class="mini-noticia-link">
-               <div class="mini-noticia">
+            <a href="clima.html" class="mini-noticia-link">
+                <div class="mini-noticia">
                     <img src="https://wmo.int/sites/default/files/article_bulletin/featured_media/NWP_3.png" alt="Clima IA">
                     <div>
                         <span class="tag" style="font-size: 0.5rem;">IA</span>
                         <p class="titulo-relacionado">Algoritmos que predicen el clima con precisión total.</p>
                     </div>
-               </div>
-           </a>
+                </div>
+            </a>
 
-           <a href="css-moderno.html" class="mini-noticia-link">
+            <a href="css-moderno.html" class="mini-noticia-link">
                 <div class="mini-noticia">
                     <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/10/optimize-css.jpeg" alt="CSS Web">
                     <div>
-                      <span class="tag" style="font-size: 0.5rem;">Web</span>
-                      <p class="titulo-relacionado">Cómo el CSS moderno está matando a las imágenes pesadas.</p>
-                   </div>
-               </div>
-           </a>
+                        <span class="tag" style="font-size: 0.5rem;">Web</span>
+                        <p class="titulo-relacionado">Cómo el CSS moderno está matando a las imágenes pesadas.</p>
+                    </div>
+                </div>
+            </a>
         </aside>
     </div> 
-    <footer><p>&copy; 2026 El Eco Digital</p></footer>
+
+    <footer>
+        <p>&copy; 2026 El Eco Digital | Futuro en Gadgets</p>
+    </footer>
 
     <script>
-        const menuToggle = document.getElementById('mobile-menu');
+        const menuBtn = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
 
-        menuToggle.addEventListener('click', () => {
+        menuBtn.addEventListener('click', (e) => {
             navMenu.classList.toggle('active');
+            e.stopPropagation();
+        });
+
+        // Cerrar menú al tocar fuera (imprescindible en móvil)
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
         });
     </script>
 </body>
