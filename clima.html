@@ -30,7 +30,7 @@
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">IA</span>
-            <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAY 2026</p>
+            <p class="fecha-publicacion">Publicado: 29 MAY 2026</p>
             
             <h1>Algoritmos que predicen el clima con precisión total</h1>
             
@@ -38,9 +38,11 @@
             
             <p class="subtitulo">Gracias al procesamiento de datos masivos (Big Data), los nuevos modelos de IA pueden predecir tormentas con un 99% de exactitud.</p>
             
-            <p>Este avance salvará miles de vidas al permitir evacuaciones más precisas y una mejor gestión de la agricultura global. Los expertos aseguran que estamos ante la mayor revolución meteorológica desde el invento del satélite.</p>
-            
-            <p>El procesamiento se realiza en granjas de servidores alimentadas por energía solar, haciendo que la predicción no solo sea inteligente, sino también sostenible.</p>
+            <div class="contenido-texto">
+                <p>Este avance salvará miles de vidas al permitir evacuaciones más precisas y una mejor gestión de la agricultura global. Los expertos aseguran que estamos ante la mayor revolución meteorológica desde el invento del satélite.</p>
+                
+                <p>El procesamiento se realiza en granjas de servidores alimentadas por energía solar, haciendo que la predicción no solo sea inteligente, sino también sostenible.</p>
+            </div>
         </main>
 
         <aside class="relacionados">
@@ -48,8 +50,8 @@
             <a href="lentes.html" class="mini-noticia-link">
                 <div class="mini-noticia">
                     <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
-                    <div>
-                        <span class="tag" style="font-size: 0.5rem;">Gadgets</span>
+                    <div class="mini-info">
+                        <span class="tag-mini">Gadgets</span>
                         <p class="titulo-relacionado">Nuevos lentes de realidad aumentada llegan al mercado.</p>
                     </div>
                 </div>
@@ -70,7 +72,6 @@
             e.stopPropagation();
         });
 
-        // Cerrar si tocas fuera del menú
         document.addEventListener('click', (e) => {
             if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('active');
