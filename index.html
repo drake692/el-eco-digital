@@ -2,19 +2,20 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnología - El Eco Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class="menu-toggle" id="mobile-menu">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
         <h1>EL ECO DIGITAL</h1>
-        <p>Sección: Tecnología e Innovación</p>
+        <p class="seccion-texto">Sección: Tecnología e Innovación</p>
     </header>
 
     <nav id="nav-menu">
@@ -35,16 +36,16 @@
             <h1>El futuro del Hardware: Chips de nueva generación</h1>
             <p class="subtitulo">La potencia de procesamiento se duplica mientras el consumo de energía cae a mínimos históricos.</p>
             
-            <img src="https://ecosistemastartup.com/wp-content/uploads/2026/03/chips-ia-2026-samsung-nvidia-amd-scaled.jpg" alt="Tecnología" style="width: 100%; border-radius: 0px; margin: 20px 0; border: 4px solid #000;">
+            <img src="https://ecosistemastartup.com/wp-content/uploads/2026/03/chips-ia-2026-samsung-nvidia-amd-scaled.jpg" alt="Chips de nueva generación" class="img-noticia">
             
             <p>La computación cuántica y los nuevos procesadores basados en luz están redefiniendo lo que creíamos posible. En esta sección exploramos cómo estas innovaciones impactarán la vida cotidiana en la próxima década...</p>
 
-            <div class="video-vandal" style="margin: 35px 0; border: 4px solid #000; background: #000; box-shadow: 8px 8px 0px #1B4D3E;">
+            <div class="video-vandal">
                 <video width="100%" controls poster="https://img.freepik.com/fotos-premium/fondo-tecnologia-futurista-microchip-ia-procesador-central-ia-generativa_1022452-16345.jpg">
                     <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
                     Tu navegador no soporta el video.
                 </video>
-                <div style="padding: 12px; background: #000; color: #fff; font-family: 'Courier New', monospace; font-size: 0.8rem;">
+                <div class="video-footer">
                     <span style="color: #00ff00;">●</span> LIVE_DEMO: Procesamiento Cuántico v2.0
                 </div>
             </div>
@@ -95,8 +96,16 @@
         const menuToggle = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
 
-        menuToggle.addEventListener('click', () => {
+        menuToggle.addEventListener('click', (e) => {
             navMenu.classList.toggle('active');
+            e.stopPropagation(); // Evita que el clic se propague
+        });
+
+        // Cerrar menú al tocar cualquier otra parte de la pantalla
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
         });
     </script>
 
