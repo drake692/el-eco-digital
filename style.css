@@ -1,5 +1,4 @@
 :root {
-    /* MODIFICA ESTOS VALORES PARA CAMBIAR EL TAMAÑO GENERAL */
     --base-font-size: 16px;
     --border-thickness: 4px;
     --shadow-size: 8px;
@@ -12,41 +11,48 @@ html {
     font-size: var(--base-font-size);
 }
 
-/* Estilo General - VANDAL RANDOM */
 body {
     background-color: #ffffff; 
     color: var(--vandal-black); 
     font-family: 'Impact', 'Arial Black', sans-serif;
     margin: 0;
-    padding: 10px;
-    overflow-x: hidden; /* Evita scroll horizontal en celulares */
+    padding: 0; /* Quitamos el padding para que el header pegue a los bordes */
+    overflow-x: hidden;
 }
 
-/* Encabezado y Navegación */
+/* Encabezado */
 header {
     background-color: var(--main-green); 
-    border: var(--border-thickness) solid var(--vandal-black); 
+    border-bottom: var(--border-thickness) solid var(--vandal-black); 
     padding: 20px;
-    text-align: left;
-    transform: rotate(-1deg);
-    margin-bottom: 20px;
+    position: relative; /* Necesario para posicionar el botón hamburguesa */
+    z-index: 1001;
 }
 
 header h1 {
-    font-size: clamp(2rem, 8vw, 4rem); /* Tamaño fluido: min 2rem, max 4rem */
+    font-size: clamp(2rem, 8vw, 3.5rem);
     margin: 0;
     color: #fff;
     -webkit-text-stroke: 1px var(--vandal-black);
+    text-align: center; /* Centrado para móvil queda mejor */
 }
 
+header p {
+    color: #fff;
+    margin: 5px 0 0 0;
+    text-align: center;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Navegación */
 nav {
     background-color: var(--vandal-black); 
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
     padding: 15px;
-    border: 3px solid var(--main-green);
-    transform: rotate(1deg);
+    border-bottom: 3px solid var(--main-green);
     z-index: 100;
 }
 
@@ -54,36 +60,37 @@ nav a {
     color: #ffffff; 
     text-decoration: none;
     font-weight: 900;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: uppercase;
-    padding: 8px 12px;
-    transition: all 0.2s ease;
+    padding: 8px;
 }
 
-nav a:hover {
-    color: var(--vandal-black); 
+/* Botón Hamburguesa */
+.menu-toggle {
+    display: none;
+    position: absolute;
+    left: 15px;
+    top: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    z-index: 1002;
+}
+
+.menu-toggle span {
     background-color: #ffffff;
+    height: 4px;
+    width: 100%;
+    border: 1px solid var(--vandal-black);
 }
 
-/* Etiquetas de categoría - Estilo Sticker */
-.tag {
-    background-color: var(--vandal-black); 
-    color: #ffffff; 
-    padding: 6px 12px;
-    font-weight: bold;
-    font-size: 0.8rem;
-    border: 2px solid var(--main-green);
-    text-transform: uppercase;
-    display: inline-block;
-    transform: skewX(-10deg);
-}
-
-/* Diseño de la Noticia Principal */
+/* Contenedores */
 .main-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 20px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .noticia-principal {
@@ -93,135 +100,57 @@ nav a:hover {
     box-shadow: var(--shadow-size) var(--shadow-size) 0px var(--main-green);
 }
 
-.noticia-principal h1 {
-    font-size: clamp(1.8rem, 6vw, 3rem);
-    margin-top: 15px;
-    line-height: 1;
-    text-transform: uppercase;
-}
-
-/* Ajuste para el VIDEO de la opción 1 */
-video {
+.img-noticia {
     width: 100%;
-    height: auto;
-    display: block;
     border: var(--border-thickness) solid var(--vandal-black);
-}
-
-.subtitulo {
-    font-family: 'Segoe UI', sans-serif;
-    color: #222222; 
-    font-size: clamp(1rem, 4vw, 1.3rem);
-    border-left: 5px solid var(--main-green);
-    padding-left: 15px;
-    margin: 15px 0;
-}
-
-/* Artículos relacionados (Barra lateral) */
-.relacionados {
-    background: #f0f0f0;
-    border: var(--border-thickness) solid var(--vandal-black);
-    padding: 20px;
-    box-shadow: calc(var(--shadow-size) * -1) var(--shadow-size) 0px var(--vandal-black);
-}
-
-.relacionados h3 {
-    border-bottom: 4px dashed var(--main-green);
-    padding-bottom: 10px;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-}
-
-.mini-noticia {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.mini-noticia img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border: 2px solid var(--vandal-black);
-    flex-shrink: 0;
-}
-
-.mini-noticia-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: transform 0.2s;
-}
-
-.mini-noticia-link:hover {
-    background-color: var(--main-green); 
-    color: #ffffff;
-    transform: scale(1.02);
-}
-
-/* --- ESTILO DEL BOTÓN HAMBURGUESA --- */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    width: 35px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-}
-
-.menu-toggle span {
-    background-color: #ffffff;
-    height: 5px;
-    margin: 3px 0;
-    border: 1px solid var(--vandal-black);
-    display: block;
-    width: 100%;
+    margin: 20px 0;
 }
 
 /* --- DISEÑO RESPONSIVO (MÓVILES) --- */
 @media (max-width: 768px) {
     .main-container {
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        grid-template-columns: 1fr; /* Una sola columna */
+        padding: 15px;
     }
 
     .menu-toggle {
-        display: flex;
+        display: flex; /* Aparece en móvil */
     }
 
-    /* Ocultar menú normal y preparar para desplegable */
+    header h1 {
+        padding-left: 20px; /* Espacio para no chocar con el botón */
+    }
+
     nav {
-        display: none;
+        display: none; /* Se oculta */
         flex-direction: column;
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
         width: 100%;
-        position: relative;
-        transform: none; /* Quitamos inclinación para que no se corte en móvil */
-        margin-top: 10px;
+        box-sizing: border-box;
+        border-right: none;
+        border-left: none;
+        text-align: center;
+        box-shadow: 0px 10px 0px var(--main-green);
     }
 
     nav.active {
         display: flex;
+        animation: vandalSlide 0.3s ease-out forwards;
     }
 
-    header {
-        transform: none;
-        padding: 15px;
-    }
-
-    .noticia-principal {
-        box-shadow: 5px 5px 0px var(--main-green); /* Sombra más pequeña en móvil */
-        padding: 15px;
+    .noticia-principal h1 {
+        font-size: 2.2rem; /* Un poco más pequeño para que no rompa */
     }
 
     .relacionados {
-        transform: none;
-        box-shadow: 5px 5px 0px var(--vandal-black);
+        margin-top: 30px;
+        box-shadow: 6px 6px 0px var(--vandal-black);
     }
 }
 
-/* Animación de entrada ruda */
 @keyframes vandalSlide {
-    from { opacity: 0; transform: translateY(-10px); }
+    from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
