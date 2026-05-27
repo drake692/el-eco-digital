@@ -271,41 +271,54 @@ footer {
 /* --- DISEÑO MÓVIL (MÁX 768PX) --- */
 @media (max-width: 768px) {
     
+    /* El header necesita posición relativa para que el menú se pegue a él */
+    header {
+        position: relative;
+        z-index: 1001; /* Por encima de todo */
+    }
+
     .menu-toggle {
-        display: flex; /* APARECE SOLO EN MÓVIL */
+        display: flex; 
         position: absolute;
         left: 15px;
         top: 50%;
         transform: translateY(-50%);
     }
 
+    /* MENÚ DESPLEGABLE: Ahora flota al inicio */
     nav {
-        display: none; /* Se oculta para el desplegable */
+        display: none; 
         flex-direction: column;
-        position: absolute;
-        top: 100%;
+        position: absolute; /* <--- Esto hace que flote */
+        top: 100%;          /* <--- Se pega justo debajo del header */
         left: 0;
         width: 100%;
-        z-index: 1000;
+        z-index: 9999;      /* <--- Prioridad máxima sobre noticias e imágenes */
         background-color: var(--vandal-black);
-        border-top: 2px solid var(--main-green);
+        border-bottom: var(--border-thickness) solid var(--main-green);
+        padding: 0;
+        box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
     }
 
     nav.active {
-        display: flex; /* Se activa con el JS */
-        animation: vandalSlide 0.3s ease-out;
+        display: flex; 
+        animation: vandalSlide 0.3s forwards;
     }
 
     nav a {
-        padding: 18px;
+        padding: 20px;
         border-bottom: 1px solid #222;
         text-align: center;
         font-size: 1.1rem;
+        width: 100%;
     }
 
+    /* Ajustes de grid para que el contenido no se rompa abajo */
     .main-container {
-        grid-template-columns: 1fr; /* Columna única */
+        grid-template-columns: 1fr;
         padding: 15px;
+        position: relative;
+        z-index: 1; /* Por debajo del menú desplegable */
     }
 
     .noticia-principal {
@@ -318,7 +331,14 @@ footer {
     }
 }
 
+/* Animación más suave */
 @keyframes vandalSlide {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+        opacity: 0; 
+        transform: translateY(-10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
