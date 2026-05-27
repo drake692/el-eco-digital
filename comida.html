@@ -2,18 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comida - El Eco Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="menu-toggle" id="mobile-menu">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
         <h1>EL ECO DIGITAL</h1>
-        <p>Tendencias > Gastronomía</p>
+        <p class="seccion-texto">Tendencias > Gastronomía</p>
     </header>
     
     <nav id="nav-menu">
@@ -29,45 +30,62 @@
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">FoodTech</span>
+            <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAY 2026</p>
+
             <h1>Impresión molecular de alimentos llega a las cocinas domésticas</h1>
-            <img src="https://www.el-mexicano.com.mx/Uploads/Article/0/f405efaf-a572-4f9c-b9d5-08898a306586.png" alt="Comida molecular futurista" style="width: 100%; border-radius: 0px; margin: 20px 0; border: 4px solid #000;">
             
-            <p>Los superalimentos impresos con perfiles nutricionales milimétricos y personalizados están transformando la dieta diaria. La carne cultivada de laboratorio ya comparte espacio en los menús premium.</p>
-            <p>Restaurantes galardonados experimentan con sabores completamente sintéticos que imitan texturas orgánicas imposibles de encontrar en la naturaleza.</p>
+            <img src="https://www.el-mexicano.com.mx/Uploads/Article/0/f405efaf-a572-4f9c-b9d5-08898a306586.png" alt="Comida molecular futurista" class="img-noticia">
+            
+            <p class="subtitulo">Los superalimentos impresos con perfiles nutricionales milimétricos están transformando la dieta diaria.</p>
+
+            <p>La carne cultivada de laboratorio ya comparte espacio en los menús premium. Restaurantes galardonados experimentan con sabores completamente sintéticos que imitan texturas orgánicas imposibles de encontrar en la naturaleza.</p>
+            
+            <p>Lo que antes era ciencia ficción, hoy es un electrodoméstico más que permite a los usuarios "descargar" cenas diseñadas por chefs estrella directamente a sus platos.</p>
         </main>
 
         <aside class="relacionados">
-           <h3>Artículos relacionados</h3>
-           
-           <a href="#" class="mini-noticia-link">
-               <div class="mini-noticia">
-                   <img src="https://i.blogs.es/f7c1b1/atomo-coffee/500_333.jpeg" alt="Plato gourmet">
-                   <div>
-                      <span class="tag" style="font-size: 0.5rem;">Sustentable</span>
-                      <p class="titulo-relacionado">Café sin grano: el nuevo estándar de la cafeína limpia.</p>
-                   </div>
-               </div>
-            </a>
+            <h3>Artículos relacionados</h3>
             
-           <a href="#" class="mini-noticia-link">
-               <div class="mini-noticia">
-                    <img src="https://noticias.udec.cl/app/uploads/2024/10/capsula-microalgas.jpg" alt="Nutrición">
+            <a href="#" class="mini-noticia-link">
+                <div class="mini-noticia">
+                    <img src="https://i.blogs.es/f7c1b1/atomo-coffee/500_333.jpeg" alt="Café sintético">
                     <div>
-                        <span class="tag" style="font-size: 0.5rem;">Salud</span>
-                        <p class="titulo-relacionado">Cápsulas de microalgas que reemplazan los desayunos pesados.</p>
+                       <span class="tag" style="font-size: 0.5rem;">Sustentable</span>
+                       <p class="titulo-relacionado">Café sin grano: el nuevo estándar de la cafeína limpia.</p>
                     </div>
-               </div>
-           </a>
+                </div>
+             </a>
+             
+            <a href="#" class="mini-noticia-link">
+                <div class="mini-noticia">
+                     <img src="https://noticias.udec.cl/app/uploads/2024/10/capsula-microalgas.jpg" alt="Microalgas">
+                     <div>
+                         <span class="tag" style="font-size: 0.5rem;">Salud</span>
+                         <p class="titulo-relacionado">Cápsulas de microalgas que reemplazan los desayunos.</p>
+                     </div>
+                </div>
+            </a>
         </aside>
     </div>
-    <footer><p>&copy; 2026 El Eco Digital</p></footer>
+
+    <footer>
+        <p>&copy; 2026 El Eco Digital | Gastronomía del Futuro</p>
+    </footer>
 
     <script>
-        const menuToggle = document.getElementById('mobile-menu');
+        const menuBtn = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
 
-        menuToggle.addEventListener('click', () => {
+        menuBtn.addEventListener('click', (e) => {
             navMenu.classList.toggle('active');
+            e.stopPropagation();
+        });
+
+        // Cerrar menú al tocar el contenido para mejorar la experiencia móvil
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
         });
     </script>
 </body>
