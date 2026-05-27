@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Tecnología - El Eco Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -31,26 +31,28 @@
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">Últimas Noticias</span>
-            <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAR 2026, 11:10 A.M.</p>
+            <p class="fecha-publicacion">Publicado: 29 MAR 2026, 11:10 A.M.</p>
             
             <h1>El futuro del Hardware: Chips de nueva generación</h1>
             <p class="subtitulo">La potencia de procesamiento se duplica mientras el consumo de energía cae a mínimos históricos.</p>
             
             <img src="https://ecosistemastartup.com/wp-content/uploads/2026/03/chips-ia-2026-samsung-nvidia-amd-scaled.jpg" alt="Chips de nueva generación" class="img-noticia">
             
-            <p>La computación cuántica y los nuevos procesadores basados en luz están redefiniendo lo que creíamos posible. En esta sección exploramos cómo estas innovaciones impactarán la vida cotidiana en la próxima década...</p>
+            <div class="contenido-texto">
+                <p>La computación cuántica y los nuevos procesadores basados en luz están redefiniendo lo que creíamos posible. En esta sección exploramos cómo estas innovaciones impactarán la vida cotidiana...</p>
 
-            <div class="video-vandal">
-                <video width="100%" controls poster="https://img.freepik.com/fotos-premium/fondo-tecnologia-futurista-microchip-ia-procesador-central-ia-generativa_1022452-16345.jpg">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                    Tu navegador no soporta el video.
-                </video>
-                <div class="video-footer">
-                    <span style="color: #00ff00;">●</span> LIVE_DEMO: Procesamiento Cuántico v2.0
+                <div class="video-vandal">
+                    <video width="100%" controls poster="https://img.freepik.com/fotos-premium/fondo-tecnologia-futurista-microchip-ia-procesador-central-ia-generativa_1022452-16345.jpg">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                    <div class="video-footer">
+                        <span style="color: #00ff00;">●</span> LIVE_DEMO: Procesamiento Cuántico v2.0
+                    </div>
                 </div>
-            </div>
 
-            <p>Los nuevos materiales semiconductores permiten que los dispositivos móviles no solo sean más rápidos, sino que su batería dure semanas en lugar de horas.</p>
+                <p>Los nuevos materiales semiconductores permiten que los dispositivos móviles no solo sean más rápidos, sino que su batería dure semanas en lugar de horas.</p>
+            </div>
         </main>
 
         <aside class="relacionados">
@@ -59,8 +61,8 @@
            <a href="lentes.html" class="mini-noticia-link">
                <div class="mini-noticia">
                    <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
-                   <div>
-                      <span class="tag" style="font-size: 0.5rem;">Gadgets</span>
+                   <div class="mini-info">
+                      <span class="tag-mini">Gadgets</span>
                       <p class="titulo-relacionado">Nuevos lentes de realidad aumentada llegan al mercado.</p>
                    </div>
                </div>
@@ -69,20 +71,10 @@
            <a href="clima.html" class="mini-noticia-link">
                <div class="mini-noticia">
                     <img src="https://wmo.int/sites/default/files/article_bulletin/featured_media/NWP_3.png" alt="Clima IA">
-                    <div>
-                        <span class="tag" style="font-size: 0.5rem;">IA</span>
+                    <div class="mini-info">
+                        <span class="tag-mini">IA</span>
                         <p class="titulo-relacionado">Algoritmos que predicen el clima con precisión total.</p>
                     </div>
-               </div>
-           </a>
-
-           <a href="css-moderno.html" class="mini-noticia-link">
-                <div class="mini-noticia">
-                    <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/10/optimize-css.jpeg" alt="CSS Web">
-                    <div>
-                      <span class="tag" style="font-size: 0.5rem;">Web</span>
-                      <p class="titulo-relacionado">Cómo el CSS moderno está matando a las imágenes pesadas.</p>
-                   </div>
                </div>
            </a>
         </aside>
@@ -98,16 +90,14 @@
 
         menuToggle.addEventListener('click', (e) => {
             navMenu.classList.toggle('active');
-            e.stopPropagation(); // Evita que el clic se propague
+            e.stopPropagation();
         });
 
-        // Cerrar menú al tocar cualquier otra parte de la pantalla
         document.addEventListener('click', (e) => {
             if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('active');
             }
         });
     </script>
-
 </body>
 </html>
