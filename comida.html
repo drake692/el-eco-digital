@@ -30,7 +30,7 @@
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">FoodTech</span>
-            <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAY 2026</p>
+            <p class="fecha-publicacion">Publicado: 29 MAY 2026</p>
 
             <h1>Impresión molecular de alimentos llega a las cocinas domésticas</h1>
             
@@ -38,9 +38,11 @@
             
             <p class="subtitulo">Los superalimentos impresos con perfiles nutricionales milimétricos están transformando la dieta diaria.</p>
 
-            <p>La carne cultivada de laboratorio ya comparte espacio en los menús premium. Restaurantes galardonados experimentan con sabores completamente sintéticos que imitan texturas orgánicas imposibles de encontrar en la naturaleza.</p>
-            
-            <p>Lo que antes era ciencia ficción, hoy es un electrodoméstico más que permite a los usuarios "descargar" cenas diseñadas por chefs estrella directamente a sus platos.</p>
+            <div class="contenido-texto">
+                <p>La carne cultivada de laboratorio ya comparte espacio en los menús premium. Restaurantes galardonados experimentan con sabores completamente sintéticos que imitan texturas orgánicas imposibles de encontrar en la naturaleza.</p>
+                
+                <p>Lo que antes era ciencia ficción, hoy es un electrodoméstico más que permite a los usuarios "descargar" cenas diseñadas por chefs estrella directamente a sus platos.</p>
+            </div>
         </main>
 
         <aside class="relacionados">
@@ -49,8 +51,8 @@
             <a href="#" class="mini-noticia-link">
                 <div class="mini-noticia">
                     <img src="https://i.blogs.es/f7c1b1/atomo-coffee/500_333.jpeg" alt="Café sintético">
-                    <div>
-                       <span class="tag" style="font-size: 0.5rem;">Sustentable</span>
+                    <div class="mini-info">
+                       <span class="tag-mini">Sustentable</span>
                        <p class="titulo-relacionado">Café sin grano: el nuevo estándar de la cafeína limpia.</p>
                     </div>
                 </div>
@@ -59,8 +61,8 @@
             <a href="#" class="mini-noticia-link">
                 <div class="mini-noticia">
                      <img src="https://noticias.udec.cl/app/uploads/2024/10/capsula-microalgas.jpg" alt="Microalgas">
-                     <div>
-                         <span class="tag" style="font-size: 0.5rem;">Salud</span>
+                     <div class="mini-info">
+                         <span class="tag-mini">Salud</span>
                          <p class="titulo-relacionado">Cápsulas de microalgas que reemplazan los desayunos.</p>
                      </div>
                 </div>
@@ -81,7 +83,6 @@
             e.stopPropagation();
         });
 
-        // Cerrar menú al tocar el contenido para mejorar la experiencia móvil
         document.addEventListener('click', (e) => {
             if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('active');
