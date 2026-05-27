@@ -2,19 +2,20 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnología - El Eco Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class="menu-toggle" id="mobile-menu">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
         <h1>EL ECO DIGITAL</h1>
-        <p>Innovación y Futuro</p>
+        <p class="seccion-texto">Innovación y Futuro</p>
     </header>
 
     <nav id="nav-menu">
@@ -31,70 +32,86 @@
         <main class="noticia-principal">
             <article class="noticia">
                 <span class="tag">Inteligencia Artificial</span>
+                <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAY 2026</p>
+                
                 <h1>La Inteligencia Artificial revoluciona la Web</h1>
-                <img src="https://www.camarabilbao.com/wp-content/uploads/2024/04/inteligencia-artificial-formacion-empresa.jpeg" alt="IA" style="width: 100%; border-radius: 0px; margin: 20px 0; border: 4px solid #000;">
-                <p>Las nuevas herramientas de IA están permitiendo a los desarrolladores crear sitios web más rápidos y personalizados. Según expertos, la integración total de asistentes inteligentes ya es una realidad en los navegadores.</p>
+                
+                <img src="https://www.camarabilbao.com/wp-content/uploads/2024/04/inteligencia-artificial-formacion-empresa.jpeg" alt="IA" class="img-noticia">
+                
+                <p class="subtitulo">Las nuevas herramientas de IA están permitiendo crear sitios web más rápidos, accesibles y ultra-personalizados.</p>
+                
+                <p>La integración total de asistentes inteligentes ya es una realidad en los navegadores modernos. Estas herramientas no solo ayudan a los desarrolladores a escribir código más limpio, sino que adaptan la interfaz en tiempo real según las necesidades del usuario.</p>
             </article>
 
-            <article class="noticia" style="margin-top: 40px; border-top: 4px dashed #1B4D3E; padding-top: 20px;">
+            <article class="noticia" style="margin-top: 40px; border-top: 4px dashed var(--main-green); padding-top: 20px;">
                 <span class="tag">Gadgets</span>
-                <h1 style="font-size: 2.2rem; margin-top: 15px;">El fin de las contraseñas</h1>
-                <p>Nuevos dispositivos biométricos prometen eliminar las contraseñas tradicionales, usando reconocimiento de iris y patrones de voz para una seguridad total.</p>
+                <h2 style="font-size: 2.2rem; margin-top: 15px; text-transform: uppercase;">El fin de las contraseñas</h2>
+                <p>Nuevos dispositivos biométricos prometen eliminar los logins tradicionales. El reconocimiento de iris y los patrones de voz se posicionan como el estándar definitivo de seguridad total.</p>
             </article>
             
-            <section class="secciones" style="margin-top: 40px; background: #f0f0f0; padding: 15px; border: 4px solid #000; box-shadow: 6px 6px 0px #1B4D3E;">
-                <h3 style="text-transform: uppercase; margin: 0 0 10px 0; font-size: 1.5rem;">Lo más leído</h3>
-                <ul style="padding-left: 20px; font-family: 'Segoe UI', sans-serif; font-weight: bold;">
-                    <li>Próximos Smartphones</li>
-                    <li>Guía de Ciberseguridad</li>
+            <section class="agenda-vandal" style="margin-top: 40px; background: #f0f0f0; padding: 20px; border: 4px solid #000; box-shadow: 8px 8px 0px var(--main-green);">
+                <h3 style="text-transform: uppercase; margin: 0 0 15px 0; font-size: 1.8rem; border-bottom: 2px solid #000;">Lo más leído</h3>
+                <ul style="padding-left: 20px; font-family: 'Segoe UI', sans-serif; font-weight: bold; list-style: square;">
+                    <li>Próximos Smartphones: Lanzamientos 2026</li>
+                    <li>Guía de Ciberseguridad para el Hogar</li>
+                    <li>El impacto de la computación cuántica</li>
                 </ul>
             </section>
         </main>
 
         <aside class="relacionados">
-           <h3>Artículos relacionados</h3>
+            <h3>Artículos relacionados</h3>
     
-           <a href="lentes.html" class="mini-noticia-link">
-               <div class="mini-noticia">
-                   <img src="https://revistamercado.do" alt="Lentes RA">
-                   <div>
-                      <span class="tag" style="font-size: 0.5rem;">Gadgets</span>
-                      <p class="titulo-relacionado">Nuevos lentes de realidad aumentada llegan al mercado.</p>
-                   </div>
-               </div>
+            <a href="lentes.html" class="mini-noticia-link">
+                <div class="mini-noticia">
+                    <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
+                    <div>
+                       <span class="tag" style="font-size: 0.5rem;">Gadgets</span>
+                       <p class="titulo-relacionado">Nuevos lentes de realidad aumentada llegan al mercado.</p>
+                    </div>
+                </div>
+             </a>
+
+            <a href="clima.html" class="mini-noticia-link">
+                <div class="mini-noticia">
+                     <img src="https://wmo.int/sites/default/files/article_bulletin/featured_media/NWP_3.png" alt="Clima IA">
+                     <div>
+                         <span class="tag" style="font-size: 0.5rem;">IA</span>
+                         <p class="titulo-relacionado">Algoritmos que predicen el clima con precisión total.</p>
+                     </div>
+                </div>
             </a>
 
-           <a href="clima.html" class="mini-noticia-link">
-               <div class="mini-noticia">
-                    <img src="https://wmo.int" alt="Clima IA">
-                    <div>
-                        <span class="tag" style="font-size: 0.5rem;">IA</span>
-                        <p class="titulo-relacionado">Algoritmos que predicen el clima con precisión total.</p>
-                    </div>
-               </div>
-           </a>
-
-           <a href="css-moderno.html" class="mini-noticia-link">
+            <a href="css-moderno.html" class="mini-noticia-link">
                 <div class="mini-noticia">
-                    <img src="https://kinsta.com" alt="CSS Web">
-                    <div>
-                      <span class="tag" style="font-size: 0.5rem;">Web</span>
-                      <p class="titulo-relacionado">Cómo el CSS moderno está matando a las imágenes pesadas.</p>
-                   </div>
-               </div>
-           </a>
+                     <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/10/optimize-css.jpeg" alt="CSS Web">
+                     <div>
+                         <span class="tag" style="font-size: 0.5rem;">Web</span>
+                         <p class="titulo-relacionado">Cómo el CSS moderno mata a las imágenes pesadas.</p>
+                     </div>
+                </div>
+            </a>
         </aside>
     </div>
+
     <footer>
         <p>&copy; 2026 El Eco Digital | Sección Tecnología</p>
     </footer>
 
     <script>
-        const menuToggle = document.getElementById('mobile-menu');
+        const menuBtn = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
 
-        menuToggle.addEventListener('click', () => {
+        menuBtn.addEventListener('click', (e) => {
             navMenu.classList.toggle('active');
+            e.stopPropagation();
+        });
+
+        // Cerrar menú al tocar el contenido
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
         });
     </script>
 </body>
