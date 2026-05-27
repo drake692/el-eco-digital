@@ -1,34 +1,53 @@
+:root {
+    /* MODIFICA ESTOS VALORES PARA CAMBIAR EL TAMAÑO GENERAL */
+    --base-font-size: 16px;
+    --border-thickness: 4px;
+    --shadow-size: 8px;
+    --main-green: #1B4D3E;
+    --vandal-black: #000000;
+}
+
 html {
     scroll-behavior: smooth;
+    font-size: var(--base-font-size);
 }
 
 /* Estilo General - VANDAL RANDOM */
 body {
     background-color: #ffffff; 
-    color: #000000; 
-    font-family: 'Impact', 'Arial Black', sans-serif; /* Cambio de fuente a una más urbana */
+    color: var(--vandal-black); 
+    font-family: 'Impact', 'Arial Black', sans-serif;
     margin: 0;
     padding: 10px;
+    overflow-x: hidden; /* Evita scroll horizontal en celulares */
 }
 
 /* Encabezado y Navegación */
 header {
-    background-color: #1B4D3E; /* Fondo verde para contraste masivo */
-    border: 4px solid #000000; /* Bordes gruesos estilo cómic/vandal */
-    padding: 25px;
+    background-color: var(--main-green); 
+    border: var(--border-thickness) solid var(--vandal-black); 
+    padding: 20px;
     text-align: left;
-    transform: rotate(-1deg); /* Ligera inclinación 'random' */
+    transform: rotate(-1deg);
     margin-bottom: 20px;
 }
 
+header h1 {
+    font-size: clamp(2rem, 8vw, 4rem); /* Tamaño fluido: min 2rem, max 4rem */
+    margin: 0;
+    color: #fff;
+    -webkit-text-stroke: 1px var(--vandal-black);
+}
+
 nav {
-    background-color: #000000; /* Fondo negro */
+    background-color: var(--vandal-black); 
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
     padding: 15px;
-    border: 3px solid #1B4D3E;
-    transform: rotate(1deg); /* Inclinación opuesta */
+    border: 3px solid var(--main-green);
+    transform: rotate(1deg);
+    z-index: 100;
 }
 
 nav a {
@@ -37,73 +56,78 @@ nav a {
     font-weight: 900;
     font-size: 1.1rem;
     text-transform: uppercase;
-    padding: 5px 10px;
+    padding: 8px 12px;
     transition: all 0.2s ease;
 }
 
 nav a:hover {
-    color: #000000; 
-    background-color: #ffffff; /* Efecto invertido agresivo */
+    color: var(--vandal-black); 
+    background-color: #ffffff;
 }
 
 /* Etiquetas de categoría - Estilo Sticker */
 .tag {
-    background-color: #000000; 
+    background-color: var(--vandal-black); 
     color: #ffffff; 
     padding: 6px 12px;
     font-weight: bold;
     font-size: 0.8rem;
-    border: 2px solid #1B4D3E;
-    border-radius: 0px; /* Esquinas rectas y rudas */
+    border: 2px solid var(--main-green);
     text-transform: uppercase;
     display: inline-block;
-    transform: skewX(-10deg); /* Efecto de velocidad/diseño gaming */
+    transform: skewX(-10deg);
 }
 
 /* Diseño de la Noticia Principal */
 .main-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    padding: 20px;
+    gap: 20px;
+    padding: 10px;
 }
 
 .noticia-principal {
-    border: 4px solid #000000;
-    padding: 25px;
+    border: var(--border-thickness) solid var(--vandal-black);
+    padding: 20px;
     background: #ffffff;
-    box-shadow: 8px 8px 0px #1B4D3E; /* Sombra sólida bloque sin difuminar */
+    box-shadow: var(--shadow-size) var(--shadow-size) 0px var(--main-green);
 }
 
 .noticia-principal h1 {
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 6vw, 3rem);
     margin-top: 15px;
-    color: #000000;
-    text-transform: uppercase;
     line-height: 1;
-    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+/* Ajuste para el VIDEO de la opción 1 */
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: var(--border-thickness) solid var(--vandal-black);
 }
 
 .subtitulo {
-    font-family: 'Segoe UI', sans-serif; /* Mantener legible el texto largo */
+    font-family: 'Segoe UI', sans-serif;
     color: #222222; 
-    font-size: 1.3rem;
-    border-left: 5px solid #1B4D3E;
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    border-left: 5px solid var(--main-green);
     padding-left: 15px;
+    margin: 15px 0;
 }
 
 /* Artículos relacionados (Barra lateral) */
 .relacionados {
     background: #f0f0f0;
-    border: 4px solid #000000;
+    border: var(--border-thickness) solid var(--vandal-black);
     padding: 20px;
-    box-shadow: -8px 8px 0px #000000;
+    box-shadow: calc(var(--shadow-size) * -1) var(--shadow-size) 0px var(--vandal-black);
 }
 
 .relacionados h3 {
-    border-bottom: 4px dashed #1B4D3E; /* Línea discontinua rebelde */
+    border-bottom: 4px dashed var(--main-green);
     padding-bottom: 10px;
-    color: #000000;
     font-size: 1.8rem;
     text-transform: uppercase;
 }
@@ -112,18 +136,16 @@ nav a:hover {
     display: flex;
     gap: 15px;
     margin-bottom: 25px;
-    align-items: center;
 }
 
 .mini-noticia img {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
-    border: 3px solid #000000;
-    border-radius: 0px;
+    border: 2px solid var(--vandal-black);
+    flex-shrink: 0;
 }
 
-/* Quitar el estilo de enlace predeterminado */
 .mini-noticia-link {
     text-decoration: none;
     color: inherit;
@@ -131,128 +153,69 @@ nav a:hover {
     transition: transform 0.2s;
 }
 
-/* Efecto al pasar el mouse (Hover) */
 .mini-noticia-link:hover {
-    background-color: #1B4D3E; 
-    color: #ffffff; /* El bloque cambia a verde con texto blanco */
-    transform: scale(1.02) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: var(--main-green); 
+    color: #ffffff;
+    transform: scale(1.02);
 }
 
-.mini-noticia-link:hover .titulo-relacionado {
-    color: #ffffff; 
-}
-
-.titulo-relacionado {
-    font-size: 1rem;
-    margin: 5px 0;
-    font-weight: bold;
-    line-height: 1.1;
-    color: #000000;
-    text-transform: uppercase;
-}
-/* --- ESTILO DEL BOTÓN (Añadir fuera del media query para que exista el estilo) --- */
+/* --- ESTILO DEL BOTÓN HAMBURGUESA --- */
 .menu-toggle {
-    display: none; /* Oculto en escritorio */
+    display: none;
     flex-direction: column;
     width: 35px;
     cursor: pointer;
-    margin-bottom: 15px;
-    z-index: 1000;
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 .menu-toggle span {
     background-color: #ffffff;
     height: 5px;
     margin: 3px 0;
-    border: 2px solid #000000;
+    border: 1px solid var(--vandal-black);
     display: block;
+    width: 100%;
 }
 
-/* --- DISEÑO RESPONSIVO - IMPACTO MÁXIMO EN MÓVILES --- */
+/* --- DISEÑO RESPONSIVO (MÓVILES) --- */
 @media (max-width: 768px) {
-    body {
-        padding: 5px;
+    .main-container {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
     }
 
-    /* MOSTRAR BOTÓN HAMBURGUESA */
     .menu-toggle {
         display: flex;
     }
 
-    .main-container {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        padding: 5px;
-    }
-    
-    .noticia-principal {
-        margin-bottom: 0px; 
-        padding: 15px;
-    }
-
-    .noticia-principal h1 {
-        font-size: 3.5rem;
-        line-height: 0.9;
-        word-break: break-word;
-    }
-
-    .subtitulo {
-        font-size: 1.5rem;
-    }
-
-    /* RESET DE TRANSFORMACIONES Y SOMBRAS */
-    header, .noticia-principal, .relacionados {
-        transform: none !important; 
-        box-shadow: 6px 6px 0px #000000;
-    }
-
-    /* LÓGICA DEL MENÚ DESPLEGABLE */
+    /* Ocultar menú normal y preparar para desplegable */
     nav {
-        display: none; /* Oculto por defecto en móvil */
-        flex-direction: column; /* Lista vertical */
-        background-color: #000000;
-        padding: 15px;
-        border: 4px solid #1B4D3E;
-        transform: none !important;
+        display: none;
+        flex-direction: column;
         width: 100%;
-        box-sizing: border-box;
+        position: relative;
+        transform: none; /* Quitamos inclinación para que no se corte en móvil */
+        margin-top: 10px;
     }
 
-    /* ESTADO ABIERTO (Se activa con JS) */
     nav.active {
         display: flex;
-        margin-bottom: 20px;
-        animation: vandalSlide 0.3s ease-out;
     }
 
-    nav a {
-        font-size: 1.4rem; /* Más grande para el dedo */
-        padding: 12px;
-        border-bottom: 2px dashed #1B4D3E;
-        text-align: left;
-    }
-
-    nav a:last-child {
-        border-bottom: none;
-    }
-
-    /* AJUSTES BARRA LATERAL */
-    .relacionados {
+    header {
+        transform: none;
         padding: 15px;
     }
 
-    .relacionados h3 {
-        font-size: 2.2rem;
+    .noticia-principal {
+        box-shadow: 5px 5px 0px var(--main-green); /* Sombra más pequeña en móvil */
+        padding: 15px;
     }
 
-    .mini-noticia {
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    .titulo-relacionado {
-        font-size: 1.2rem;
+    .relacionados {
+        transform: none;
+        box-shadow: 5px 5px 0px var(--vandal-black);
     }
 }
 
