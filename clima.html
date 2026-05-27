@@ -7,21 +7,25 @@
 </head>
 <body>
     <header>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <h1>EL ECO DIGITAL</h1>
         <p>Tecnología > Inteligencia Artificial</p>
     </header>
     
-    <nav>
+    <nav id="nav-menu">
        <a href="index.html">Inicio</a>
        <a href="tecnologia.html">Tecnología</a>
        <a href="deportes.html">Deportes</a>
        <a href="cultura.html">Cultura</a>
-       <a href="comida.html">Cultura</a>
-       <a href="moda.html">Cultura</a>
-       <a href="musica.html">Cultura</a>
+       <a href="comida.html">Comida</a>
+       <a href="moda.html">Moda</a>
+       <a href="musica.html">Música</a>
     </nav>
 
-    <!-- INICIO CONTENEDOR PRINCIPAL -->
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">IA</span>
@@ -31,11 +35,8 @@
             <p>Este avance salvará miles de vidas al permitir evacuaciones más precisas y una mejor gestión de la agricultura global.</p>
         </main>
 
-        <!-- BARRA LATERAL (Dentro de main-container para el diseño móvil) -->
         <aside class="relacionados">
            <h3>Artículos relacionados</h3>
-    
-           <!-- Noticia 1: GADGETS -->
            <a href="lentes.html" class="mini-noticia-link">
                <div class="mini-noticia">
                    <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
@@ -45,32 +46,18 @@
                    </div>
                </div>
             </a>
-
-           <!-- Noticia 2: IA -->
-           <a href="clima.html" class="mini-noticia-link">
-               <div class="mini-noticia">
-                    <img src="https://wmo.int/sites/default/files/article_bulletin/featured_media/NWP_3.png" alt="Clima IA">
-                    <div>
-                       <span class="tag" style="font-size: 0.5rem;">IA</span>
-                       <p class="titulo-relacionado">Algoritmos que predicen el clima con precisión total.</p>
-                   </div>
-               </div>
-           </a>
-
-           <!-- Noticia 3: WEB -->
-           <a href="css-moderno.html" class="mini-noticia-link">
-                <div class="mini-noticia">
-                    <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/10/optimize-css.jpeg" alt="CSS Web">
-                    <div>
-                      <span class="tag" style="font-size: 0.5rem;">Web</span>
-                      <p class="titulo-relacionado">Cómo el CSS moderno está matando a las imágenes pesadas.</p>
-                   </div>
-               </div>
-           </a>
-        </aside>
+            </aside>
     </div>   
-    <!-- FIN CONTENEDOR PRINCIPAL -->
    
     <footer><p>&copy; 2024 El Eco Digital</p></footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
