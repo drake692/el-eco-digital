@@ -269,79 +269,87 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* 1. Header flexible para mandar la hamburguesa a la derecha */
     header {
         position: relative;
         display: flex;
         justify-content: center; /* Título al centro */
         align-items: center;
-        padding: 20px 10px;
+        padding: 25px 15px;
+        z-index: 1001;
     }
 
-    /* Botón a la derecha */
+    /* 2. Botón Hamburguesa a la derecha */
     .menu-toggle {
-        display: flex; 
+        display: flex;
         position: absolute;
-        right: 15px; /* <--- Ahora a la derecha */
+        right: 15px; /* <--- Lo movemos a la derecha */
         left: auto;
         top: 50%;
         transform: translateY(-50%);
     }
 
-    /* La "Ventana" de secciones */
+    /* 3. La Ventana pequeña de secciones */
     nav {
-        display: none; 
+        display: none;
         flex-direction: column;
         position: absolute;
         
-        /* Posicionamiento de ventana pequeña */
-        top: 80%;           /* Un poco abajo del header */
-        right: 10px;        /* Pegada a la derecha */
+        /* Posición tipo pop-up a la derecha */
+        top: 85%;           /* Un poco abajo del header */
+        right: 15px;        /* Alineado con el botón */
         left: auto;
-        width: 200px;       /* Ancho fijo para que parezca ventana */
+        width: 180px;       /* Ancho fijo de ventanita */
         
         background-color: var(--vandal-black);
-        border: var(--border-thickness) solid var(--main-green);
+        border: 3px solid var(--main-green); /* Borde estilo Vandal */
         z-index: 9999;
         padding: 5px 0;
-        box-shadow: 6px 6px 0px rgba(0,0,0,0.8); /* Sombra sólida estilo Vandal */
+        box-shadow: 6px 6px 0px rgba(0,0,0,0.8); /* Sombra sólida */
     }
 
     nav.active {
         display: flex;
-        animation: vandalPop 0.2s ease-out;
+        animation: vandalPop 0.2s ease-out; /* Animación de brote */
     }
 
     nav a {
         padding: 12px 15px;
-        text-align: left; /* Alineado a la izquierda como lista */
+        text-align: left;
         border-bottom: 1px solid #222;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         width: 100%;
         color: #fff;
         text-decoration: none;
-        text-transform: uppercase;
+        display: block;
+    }
+
+    nav a:last-child {
+        border-bottom: none;
     }
 
     nav a:hover {
         background-color: var(--main-green);
     }
 
-    /* Ajuste del contenedor para que no se mueva */
+    /* Evitar que el contenido se mueva */
     .main-container {
         grid-template-columns: 1fr;
         padding: 15px;
+        position: relative;
+        z-index: 1;
     }
 
     header h1 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 }
 
-/* Animación de "Aparición" rápida */
+/* Animación tipo ventana emergente */
 @keyframes vandalPop {
     from { 
         opacity: 0; 
-        transform: scale(0.9) translateY(-10px); 
+        transform: scale(0.95) translateY(-10px); 
     }
     to { 
         opacity: 1; 
