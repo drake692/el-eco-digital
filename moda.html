@@ -7,11 +7,16 @@
 </head>
 <body>
     <header>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <h1>EL ECO DIGITAL</h1>
         <p>Estilo > Moda Futura</p>
     </header>
     
-    <nav>
+    <nav id="nav-menu">
        <a href="index.html">Inicio</a>
        <a href="tecnologia.html">Tecnología</a>
        <a href="deportes.html">Deportes</a>
@@ -21,17 +26,17 @@
        <a href="musica.html">Música</a>
     </nav>
 
-    <!-- CONTENEDOR PRINCIPAL OPERANDO CORRECTAMENTE -->
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">Tendencias</span>
             <h1>Ropa Inteligente y Textiles Biológicos dominan las pasarelas</h1>
-            <img src="https://conecta.tec.mx/sites/default/files/inline-images/explicar-ciencia-fashion-revolution-tec-guadalajara-1.jpg" alt="Moda Futura" style="width: 100%; border-radius: 0px; margin: 20px 0; border: 3px solid #000;">
+            
+            <img src="https://conecta.tec.mx/sites/default/files/inline-images/explicar-ciencia-fashion-revolution-tec-guadalajara-1.jpg" alt="Moda Futura" style="width: 100%; border-radius: 0px; margin: 20px 0; border: 4px solid #000;">
+            
             <p>La alta costura ha dado un giro definitivo hacia la sustentabilidad extrema. Las prendas creadas a partir de micelio de hongo que cambian de color con la temperatura corporal son la última obsesión urbana.</p>
             <p>Diseñadores independientes integran pantallas flexibles invisibles que permiten descargar patrones digitales en tiempo real directamente sobre la tela.</p>
         </main>
 
-        <!-- BARRA LATERAL CORRECTAMENTE ANIDADA -->
         <aside class="relacionados">
            <h3>Artículos relacionados</h3>
            
@@ -49,16 +54,23 @@
                <div class="mini-noticia">
                     <img src="https://e01-elmundo.uecdn.es/assets/multimedia/imagenes/2014/11/26/14170276479073.png" alt="Moda Digital">
                     <div>
-                       <span class="tag" style="font-size: 0.5rem;">Digital</span>
-                       <p class="titulo-relacionado">Pasarelas virtuales: la ropa que solo existe en tus lentes RA.</p>
-                   </div>
+                        <span class="tag" style="font-size: 0.5rem;">Digital</span>
+                        <p class="titulo-relacionado">Pasarelas virtuales: la ropa que solo existe en tus lentes RA.</p>
+                    </div>
                </div>
            </a>
         </aside>
     </div>
-    <!-- FIN CONTENEDOR PRINCIPAL -->
-
     <footer><p>&copy; 2026 El Eco Digital</p></footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu');
+        const navBar = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navBar.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
 
