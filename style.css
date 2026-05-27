@@ -150,49 +150,100 @@ nav a:hover {
     color: #000000;
     text-transform: uppercase;
 }
+/* --- ESTILO DEL BOTÓN (Añadir fuera del media query para que exista el estilo) --- */
+.menu-toggle {
+    display: none; /* Oculto en escritorio */
+    flex-direction: column;
+    width: 35px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    z-index: 1000;
+}
 
-/* DISEÑO RESPONSIVO - IMPACTO MÁXIMO EN MÓVILES */
+.menu-toggle span {
+    background-color: #ffffff;
+    height: 5px;
+    margin: 3px 0;
+    border: 2px solid #000000;
+    display: block;
+}
+
+/* --- DISEÑO RESPONSIVO - IMPACTO MÁXIMO EN MÓVILES --- */
 @media (max-width: 768px) {
     body {
-        padding: 5px; /* Menos espacio en los bordes de la pantalla */
+        padding: 5px;
+    }
+
+    /* MOSTRAR BOTÓN HAMBURGUESA */
+    .menu-toggle {
+        display: flex;
     }
 
     .main-container {
         display: flex;
-        flex-direction: column; /* Apila la barra lateral abajo de la principal */
-        gap: 40px; /* Más separación entre bloques */
+        flex-direction: column;
+        gap: 40px;
         padding: 5px;
     }
     
     .noticia-principal {
         margin-bottom: 0px; 
-        padding: 15px; /* Más compacto por dentro */
+        padding: 15px;
     }
 
-    /* Fuentes masivas e hiper-grandes en celular */
     .noticia-principal h1 {
-        font-size: 3.5rem; /* ¡Más grande que en escritorio para estilo rebelde! */
+        font-size: 3.5rem;
         line-height: 0.9;
-        word-break: break-word; /* Evita que las palabras largas se corten */
+        word-break: break-word;
     }
 
     .subtitulo {
-        font-size: 1.5rem; /* Texto secundario más legible y grande */
+        font-size: 1.5rem;
     }
 
-    /* Quita inclinaciones para evitar desbordamiento en pantallas chicas */
-    header, nav, .noticia-principal, .relacionados {
+    /* RESET DE TRANSFORMACIONES Y SOMBRAS */
+    header, .noticia-principal, .relacionados {
         transform: none !important; 
-        box-shadow: 6px 6px 0px #000000; /* Mantiene sombras duras */
+        box-shadow: 6px 6px 0px #000000;
     }
 
-    /* Formato de la lista de artículos de abajo */
+    /* LÓGICA DEL MENÚ DESPLEGABLE */
+    nav {
+        display: none; /* Oculto por defecto en móvil */
+        flex-direction: column; /* Lista vertical */
+        background-color: #000000;
+        padding: 15px;
+        border: 4px solid #1B4D3E;
+        transform: none !important;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* ESTADO ABIERTO (Se activa con JS) */
+    nav.active {
+        display: flex;
+        margin-bottom: 20px;
+        animation: vandalSlide 0.3s ease-out;
+    }
+
+    nav a {
+        font-size: 1.4rem; /* Más grande para el dedo */
+        padding: 12px;
+        border-bottom: 2px dashed #1B4D3E;
+        text-align: left;
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+    /* AJUSTES BARRA LATERAL */
     .relacionados {
         padding: 15px;
     }
 
     .relacionados h3 {
-        font-size: 2.2rem; /* Título de sección gigante */
+        font-size: 2.2rem;
     }
 
     .mini-noticia {
@@ -201,19 +252,13 @@ nav a:hover {
     }
 
     .titulo-relacionado {
-        font-size: 1.2rem; /* Títulos de abajo más grandes y llamativos */
-    }
-
-    /* Corrección del menú de navegación que estaba roto */
-    nav {
-        justify-content: center; 
-        gap: 8px; 
-        padding: 10px;
-        transform: none !important;
-    }
-
-    nav a {
-        font-size: 1.1rem; /* Enlaces grandes y fáciles de tocar con el dedo */
-        padding: 6px 10px;
+        font-size: 1.2rem;
     }
 }
+
+/* Animación de entrada ruda */
+@keyframes vandalSlide {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
