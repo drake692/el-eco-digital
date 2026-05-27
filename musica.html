@@ -7,11 +7,16 @@
 </head>
 <body>
     <header>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <h1>EL ECO DIGITAL</h1>
         <p>Cultura > Música</p>
     </header>
     
-    <nav>
+    <nav id="nav-menu">
        <a href="index.html">Inicio</a>
        <a href="tecnologia.html">Tecnología</a>
        <a href="deportes.html">Deportes</a>
@@ -21,17 +26,17 @@
        <a href="musica.html">Música</a>
     </nav>
 
-    <!-- CONTENEDOR PRINCIPAL OPERANDO CORRECTAMENTE -->
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">Audio</span>
             <h1>El auge del Synth-Algorítmico: Festivales híbridos rompen récords</h1>
-            <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/H2AK4GCTGJG5XM624GCXIUIFYY.png" alt="Festival de Música" style="width: 100%; border-radius: 0px; margin: 20px 0; border: 3px solid #000;">
+            
+            <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/H2AK4GCTGJG5XM624GCXIUIFYY.png" alt="Festival de Música" style="width: 100%; border-radius: 0px; margin: 20px 0; border: 4px solid #000;">
+            
             <p>Los productores musicales están utilizando motores de síntesis neuronal en vivo para mutar los ritmos según los latidos y la energía colectiva de la audiencia en la pista de baile.</p>
             <p>Este nuevo género fusiona el sonido crudo del techno de los 90 con improvisaciones infinitas generadas por códigos matemáticos abiertos.</p>
         </main>
 
-        <!-- BARRA LATERAL CORRECTAMENTE ANIDADA -->
         <aside class="relacionados">
            <h3>Artículos relacionados</h3>
            
@@ -49,15 +54,22 @@
                <div class="mini-noticia">
                     <img src="https://esquirecolombia.com/wp-content/uploads/2026/03/artistas-conciertos-holograma-soda-stereo-860x484.jpg" alt="Concierto">
                     <div>
-                       <span class="tag" style="font-size: 0.5rem;">Conciertos</span>
-                       <p class="titulo-relacionado">Bandas holográficas dan giras globales simultáneas.</p>
-                   </div>
+                        <span class="tag" style="font-size: 0.5rem;">Conciertos</span>
+                        <p class="titulo-relacionado">Bandas holográficas dan giras globales simultáneas.</p>
+                    </div>
                </div>
            </a>
         </aside>
     </div>
-    <!-- FIN CONTENEDOR PRINCIPAL -->
-
     <footer><p>&copy; 2026 El Eco Digital</p></footer>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
