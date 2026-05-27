@@ -2,19 +2,20 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deportes - El Eco Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class="menu-toggle" id="mobile-menu">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
         <h1>EL ECO DIGITAL</h1>
-        <p>Deportes > Alto Rendimiento</p>
+        <p class="seccion-texto">Deportes > Alto Rendimiento</p>
     </header>
 
     <nav id="nav-menu">
@@ -31,77 +32,78 @@
         <main class="noticia-principal">
             <article class="noticia">
                 <span class="tag">Fútbol</span>
+                <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAY 2026</p>
+                
                 <h1>El fin de los fichajes millonarios: ¿Burbuja a punto de estallar?</h1>
-                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200&auto=format&fit=crop" alt="Estadio de fútbol" style="width: 100%; border-radius: 0px; margin: 20px 0; border: 4px solid #000;">
-                <p>Las nuevas regulaciones de control financiero están obligando a los clubes europeos a replantearse sus estrategias. Ya no basta con tener una chequera infinita; ahora el talento joven y la cantera son la prioridad número uno.</p>
-                <p>Analistas sugieren que el mercado verá una caída del 30% en los traspasos durante el próximo verano, marcando el inicio de una era más austera pero competitiva.</p>
+                
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200&auto=format&fit=crop" alt="Estadio de fútbol" class="img-noticia">
+                
+                <p class="subtitulo">Las nuevas regulaciones financieras están obligando a los clubes europeos a priorizar la cantera sobre la chequera.</p>
+                
+                <p>Analistas sugieren que el mercado verá una caída del 30% en los traspasos durante el próximo verano, marcando el inicio de una era más austera pero competitiva donde el talento joven será el activo más valioso.</p>
             </article>
 
-            <article class="noticia" style="margin-top: 40px; border-top: 4px dashed #1B4D3E; padding-top: 20px;">
+            <article class="noticia" style="margin-top: 40px; border-top: 4px dashed var(--main-green); padding-top: 20px;">
                 <span class="tag">Motor</span>
-                <h1 style="font-size: 2.2rem; margin-top: 15px;">Fórmula E: El rugido eléctrico conquista las ciudades</h1>
-                <p>Con circuitos urbanos cada vez más complejos, la categoría eléctrica está robando audiencia a la F1 tradicional. La tecnología de baterías ha alcanzado un punto de inflexión que permite carreras más largas y agresivas.</p>
+                <h2 style="font-size: 2.2rem; margin-top: 15px; text-transform: uppercase;">Fórmula E: El rugido eléctrico conquista las ciudades</h2>
+                <p>La tecnología de baterías ha alcanzado un punto de inflexión que permite carreras más largas y agresivas, robando audiencia a las categorías tradicionales.</p>
             </article>
             
-            <section class="secciones" style="margin-top: 40px; background: #f0f0f0; padding: 15px; border: 4px solid #000; box-shadow: 6px 6px 0px #1B4D3E;">
-                <h3 style="text-transform: uppercase; margin: 0 0 10px 0; font-size: 1.5rem;">Marcadores del Fin de Semana</h3>
+            <section class="agenda-vandal" style="margin-top: 40px; background: #f0f0f0; padding: 20px; border: 4px solid #000; box-shadow: 8px 8px 0px var(--main-green);">
+                <h3 style="text-transform: uppercase; margin: 0 0 15px 0; font-size: 1.8rem; border-bottom: 2px solid #000;">Marcadores del Fin de Semana</h3>
                 <ul style="padding-left: 20px; font-family: 'Segoe UI', sans-serif; font-weight: bold; list-style-type: '⚡ ';">
                     <li>Final de Grand Slam: 3 - 2 (Batalla de 5 horas)</li>
                     <li>Derbi Local: 0 - 0 (Defensas de hierro)</li>
-                    <li>Maratón Mundial: Nuevo récord de pista (1:58:12)</li>
+                    <li>Maratón Mundial: Nuevo récord (1:58:12)</li>
                 </ul>
             </section>
         </main>
 
         <aside class="relacionados">
-           <h3>Artículos relacionados</h3>
+            <h3>Artículos relacionados</h3>
     
-           <a href="lentes.html" class="mini-noticia-link">
-               <div class="mini-noticia">
-                   <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
-                   <div>
-                      <span class="tag" style="font-size: 0.5rem;">Gadgets</span>
-                      <p class="titulo-relacionado">Entrenando con Realidad Aumentada: El futuro del gimnasio.</p>
-                   </div>
-               </div>
-            </a>
-
-           <a href="clima.html" class="mini-noticia-link">
-               <div class="mini-noticia">
-                    <img src="https://wmo.int/sites/default/files/article_bulletin/featured_media/NWP_3.png" alt="Clima IA">
-                    <div>
-                        <span class="tag" style="font-size: 0.5rem;">IA</span>
-                        <p class="titulo-relacionado">Cómo la IA predice lesiones antes de que ocurran.</p>
-                    </div>
-               </div>
-           </a>
-
-           <a href="css-moderno.html" class="mini-noticia-link">
+            <a href="lentes.html" class="mini-noticia-link">
                 <div class="mini-noticia">
-                    <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/10/optimize-css.jpeg" alt="CSS Web">
+                    <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
                     <div>
-                      <span class="tag" style="font-size: 0.5rem;">Web</span>
-                      <p class="titulo-relacionado">Webs de clubes: Por qué la velocidad de carga es clave.</p>
-                   </div>
-               </div>
-           </a>
+                       <span class="tag" style="font-size: 0.5rem;">Gadgets</span>
+                       <p class="titulo-relacionado">Entrenando con Realidad Aumentada: El futuro del gym.</p>
+                    </div>
+                </div>
+             </a>
+
+            <a href="clima.html" class="mini-noticia-link">
+                <div class="mini-noticia">
+                     <img src="https://wmo.int/sites/default/files/article_bulletin/featured_media/NWP_3.png" alt="Clima IA">
+                     <div>
+                         <span class="tag" style="font-size: 0.5rem;">IA</span>
+                         <p class="titulo-relacionado">Cómo la IA predice lesiones deportivas.</p>
+                     </div>
+                </div>
+            </a>
         </aside>
     </div>
+
     <footer>
         <p>&copy; 2026 El Eco Digital | Sección Deportes</p>
     </footer>
 
     <script>
-        const menuToggle = document.getElementById('mobile-menu');
+        const menuBtn = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
 
-        menuToggle.addEventListener('click', () => {
+        menuBtn.addEventListener('click', (e) => {
             navMenu.classList.toggle('active');
+            e.stopPropagation();
+        });
+
+        // Cerrar menú al tocar fuera
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
         });
     </script>
-
-</body>
-</html>
 
 </body>
 </html>
