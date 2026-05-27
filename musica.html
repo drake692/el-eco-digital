@@ -30,7 +30,7 @@
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">Audio</span>
-            <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAY 2026</p>
+            <p class="fecha-publicacion">Publicado: 29 MAY 2026</p>
 
             <h1>El auge del Synth-Algorítmico: Festivales híbridos rompen récords</h1>
             
@@ -38,9 +38,11 @@
             
             <p class="subtitulo">Los ritmos ya no son fijos: ahora mutan en tiempo real según la energía colectiva de la audiencia.</p>
 
-            <p>Los productores musicales están utilizando motores de síntesis neuronal en vivo para mutar los ritmos según los latidos y la energía de la pista de baile. Este nuevo género fusiona el sonido crudo del techno de los 90 con improvisaciones infinitas generadas por códigos matemáticos.</p>
-            
-            <p>Expertos de la industria predicen que para el próximo año, los conciertos "estáticos" serán cosa del pasado, dando paso a experiencias sonoras únicas que nunca se repiten de la misma forma.</p>
+            <div class="contenido-texto">
+                <p>Los productores musicales están utilizando motores de síntesis neuronal en vivo para mutar los ritmos según los latidos y la energía de la pista de baile. Este nuevo género fusiona el sonido crudo del techno de los 90 con improvisaciones infinitas generadas por códigos matemáticos.</p>
+                
+                <p>Expertos de la industria predicen que para el próximo año, los conciertos "estáticos" serán cosa del pasado, dando paso a experiencias sonoras únicas que nunca se repiten de la misma forma.</p>
+            </div>
         </main>
 
         <aside class="relacionados">
@@ -49,8 +51,8 @@
             <a href="#" class="mini-noticia-link">
                 <div class="mini-noticia">
                     <img src="https://preview.redd.it/i-just-love-this-modular-diy-enclosure-system-finally-i-v0-gmj88rlf6oqc1.jpeg?auto=webp&s=d5e9a1a4efefb6ef490e18119e2c289caeeba42c" alt="Estudio Modular">
-                    <div>
-                       <span class="tag" style="font-size: 0.5rem;">Producción</span>
+                    <div class="mini-info">
+                       <span class="tag-mini">Producción</span>
                        <p class="titulo-relacionado">Hardware modular que puedes imprimir en 3D.</p>
                     </div>
                 </div>
@@ -59,8 +61,8 @@
             <a href="#" class="mini-noticia-link">
                 <div class="mini-noticia">
                      <img src="https://esquirecolombia.com/wp-content/uploads/2026/03/artistas-conciertos-holograma-soda-stereo-860x484.jpg" alt="Hologramas">
-                     <div>
-                         <span class="tag" style="font-size: 0.5rem;">Conciertos</span>
+                     <div class="mini-info">
+                         <span class="tag-mini">Conciertos</span>
                          <p class="titulo-relacionado">Bandas holográficas dan giras globales simultáneas.</p>
                      </div>
                 </div>
@@ -81,7 +83,6 @@
             e.stopPropagation();
         });
 
-        // Cerrar menú automáticamente al tocar fuera
         document.addEventListener('click', (e) => {
             if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('active');
