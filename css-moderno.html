@@ -2,18 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Moderno - El Eco Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="menu-toggle" id="mobile-menu">
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
         <h1>EL ECO DIGITAL</h1>
-        <p>Tecnología > Desarrollo Web</p>
+        <p class="seccion-texto">Tecnología > Desarrollo Web</p>
     </header>
     
     <nav id="nav-menu">
@@ -29,15 +30,62 @@
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">Web</span>
+            <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAY 2026</p>
+            
             <h1>Cómo el CSS moderno está matando a las imágenes pesadas</h1>
-            <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/10/optimize-css.jpeg" alt="CSS Web" style="width: 100%; border-radius: 0px; margin: 20px 0; border: 4px solid #000;">
-            <p>Con la llegada de funciones como gradientes avanzados, formas geométricas complejas y animaciones nativas, los diseñadores web ya no necesitan cargar imágenes pesadas para lograr sitios atractivos.</p>
-            <p>Esto resulta en una web mucho más rápida, accesible y ecológica al reducir el consumo de datos en los servidores.</p>
+            
+            <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/10/optimize-css.jpeg" alt="CSS Web" class="img-noticia">
+            
+            <p class="subtitulo">Gradientes, formas geométricas y animaciones nativas están haciendo que las imágenes de fondo sean cosa del pasado.</p>
+
+            <p>Con la llegada de funciones modernas, los diseñadores web ya no necesitan cargar archivos .png o .jpg pesados para lograr efectos visuales impactantes. Esto no solo mejora la estética, sino que optimiza el rendimiento global.</p>
+            
+            <p>Esto resulta en una web mucho más rápida, accesible y ecológica al reducir drásticamente el consumo de datos y la carga en los servidores alrededor del mundo.</p>
         </main>
 
         <aside class="relacionados">
-           <h3>Artículos relacionados</h3>
+            <h3>Artículos relacionados</h3>
     
-           <a href="lentes.html" class="mini-noticia-link">
-               <div class="mini-noticia">
-                   <img src="
+            <a href="lentes.html" class="mini-noticia-link">
+                <div class="mini-noticia">
+                    <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
+                    <div>
+                       <span class="tag" style="font-size: 0.5rem;">Gadgets</span>
+                       <p class="titulo-relacionado">Nuevos lentes de realidad aumentada llegan al mercado.</p>
+                    </div>
+                </div>
+             </a>
+
+             <a href="tecnologia.html" class="mini-noticia-link">
+                <div class="mini-noticia">
+                    <img src="https://ecosistemastartup.com/wp-content/uploads/2026/03/chips-ia-2026-samsung-nvidia-amd-scaled.jpg" alt="Chips">
+                    <div>
+                       <span class="tag" style="font-size: 0.5rem;">Hardware</span>
+                       <p class="titulo-relacionado">Chips de nueva generación: potencia al doble.</p>
+                    </div>
+                </div>
+             </a>
+        </aside>
+    </div>   
+   
+    <footer>
+        <p>&copy; 2026 El Eco Digital | Dev News</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', (e) => {
+            navMenu.classList.toggle('active');
+            e.stopPropagation();
+        });
+
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
