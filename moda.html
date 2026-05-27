@@ -30,7 +30,7 @@
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">Tendencias</span>
-            <p style="color: #1B4D3E; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">Publicado: 29 MAY 2026</p>
+            <p class="fecha-publicacion">Publicado: 29 MAY 2026</p>
 
             <h1>Ropa Inteligente y Textiles Biológicos dominan las pasarelas</h1>
             
@@ -38,9 +38,11 @@
             
             <p class="subtitulo">La alta costura ha dado un giro definitivo hacia la sustentabilidad extrema y la integración tecnológica.</p>
 
-            <p>Las prendas creadas a partir de micelio de hongo que cambian de color con la temperatura corporal son la última obsesión urbana. Ya no se trata solo de vestir, sino de portar organismos vivos que interactúan con el entorno.</p>
-            
-            <p>Diseñadores independientes integran pantallas flexibles invisibles que permiten descargar patrones digitales en tiempo real directamente sobre la tela, haciendo que un solo vestido pueda tener infinitos diseños.</p>
+            <div class="contenido-texto">
+                <p>Las prendas creadas a partir de micelio de hongo que cambian de color con la temperatura corporal son la última obsesión urbana. Ya no se trata solo de vestir, sino de portar organismos vivos que interactúan con el entorno.</p>
+                
+                <p>Diseñadores independientes integran pantallas flexibles invisibles que permiten descargar patrones digitales en tiempo real directamente sobre la tela, haciendo que un solo vestido pueda tener infinitos diseños.</p>
+            </div>
         </main>
 
         <aside class="relacionados">
@@ -49,8 +51,8 @@
             <a href="#" class="mini-noticia-link">
                 <div class="mini-noticia">
                     <img src="https://cdn.shopify.com/s/files/1/0040/4668/4209/files/Regina_Romero_Historia_Calzado_2.jpg?v=1724290352" alt="Calzado brutalista">
-                    <div>
-                       <span class="tag" style="font-size: 0.5rem;">Streetwear</span>
+                    <div class="mini-info">
+                       <span class="tag-mini">Streetwear</span>
                        <p class="titulo-relacionado">El regreso del brutalismo textil en el calzado urbano.</p>
                     </div>
                 </div>
@@ -59,8 +61,8 @@
             <a href="lentes.html" class="mini-noticia-link">
                 <div class="mini-noticia">
                      <img src="https://e01-elmundo.uecdn.es/assets/multimedia/imagenes/2014/11/26/14170276479073.png" alt="Moda Digital">
-                     <div>
-                         <span class="tag" style="font-size: 0.5rem;">Digital</span>
+                     <div class="mini-info">
+                         <span class="tag-mini">Digital</span>
                          <p class="titulo-relacionado">Pasarelas virtuales: la ropa que solo vive en tus lentes.</p>
                      </div>
                 </div>
@@ -81,7 +83,6 @@
             e.stopPropagation();
         });
 
-        // Cerrar menú si el usuario toca la noticia
         document.addEventListener('click', (e) => {
             if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('active');
