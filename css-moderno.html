@@ -7,72 +7,37 @@
 </head>
 <body>
     <header>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <h1>EL ECO DIGITAL</h1>
         <p>Tecnología > Desarrollo Web</p>
     </header>
     
-    <nav>
+    <nav id="nav-menu">
        <a href="index.html">Inicio</a>
        <a href="tecnologia.html">Tecnología</a>
        <a href="deportes.html">Deportes</a>
        <a href="cultura.html">Cultura</a>
-       <!-- Corrección de los textos del menú para consistencia con todo el sitio -->
        <a href="comida.html">Comida</a>
        <a href="moda.html">Moda</a>
        <a href="musica.html">Música</a>
     </nav>
 
-    <!-- INICIO CONTENEDOR PRINCIPAL -->
     <div class="main-container">
         <main class="noticia-principal">
             <span class="tag">Web</span>
             <h1>Cómo el CSS moderno está matando a las imágenes pesadas</h1>
-            <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/10/optimize-css.jpeg" alt="CSS Web" style="width: 100%; border-radius: 4px; margin: 20px 0;">
+            <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/10/optimize-css.jpeg" alt="CSS Web" style="width: 100%; border-radius: 0px; margin: 20px 0; border: 4px solid #000;">
             <p>Con la llegada de funciones como gradientes avanzados, formas geométricas complejas y animaciones nativas, los diseñadores web ya no necesitan cargar imágenes pesadas para lograr sitios atractivos.</p>
             <p>Esto resulta en una web mucho más rápida, accesible y ecológica al reducir el consumo de datos en los servidores.</p>
         </main>
 
-        <!-- BARRA LATERAL (Ubicación correcta dentro del contenedor para el salto móvil) -->
         <aside class="relacionados">
            <h3>Artículos relacionados</h3>
     
-           <!-- Noticia 1: GADGETS -->
            <a href="lentes.html" class="mini-noticia-link">
                <div class="mini-noticia">
-                   <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA">
-                   <div>
-                      <span class="tag" style="font-size: 0.5rem;">Gadgets</span>
-                      <p class="titulo-relacionado">Nuevos lentes de realidad aumentada llegan al mercado.</p>
-                   </div>
-               </div>
-            </a>
-
-           <!-- Noticia 2: IA -->
-           <a href="clima.html" class="mini-noticia-link">
-               <div class="mini-noticia">
-                    <img src="https://wmo.int/sites/default/files/article_bulletin/featured_media/NWP_3.png" alt="Clima IA">
-                    <div>
-                       <span class="tag" style="font-size: 0.5rem;">IA</span>
-                       <p class="titulo-relacionado">Algoritmos que predicen el clima con precisión total.</p>
-                   </div>
-               </div>
-           </a>
-
-           <!-- Noticia 3: WEB -->
-           <a href="css-moderno.html" class="mini-noticia-link">
-                <div class="mini-noticia">
-                    <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/10/optimize-css.jpeg" alt="CSS Web">
-                    <div>
-                      <span class="tag" style="font-size: 0.5rem;">Web</span>
-                      <p class="titulo-relacionado">Cómo el CSS moderno está matando a las imágenes pesadas.</p>
-                   </div>
-               </div>
-           </a>
-       </aside>
-   </div>
-   <!-- FIN CONTENEDOR PRINCIPAL -->
-   
-    <footer><p>&copy; 2024 El Eco Digital</p></footer>
-</body>
-</html>
-
+                   <img src="
