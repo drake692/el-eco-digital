@@ -6,96 +6,44 @@
     --vandal-black: #000000;
 }
 
-/* 1. RESET GLOBAL: Evita que el contenido se desborde */
+/* --- RESET Y BASE --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-    font-size: var(--base-font-size);
-}
-
 body {
-    background-color: #ffffff; 
-    color: var(--vandal-black); 
-    font-family: 'Impact', 'Arial Black', sans-serif;
-    overflow-x: hidden; /* Prohibe el scroll horizontal (el "corte") */
+    background-color: #ffffff;
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    overflow-x: hidden;
     width: 100%;
 }
 
-/* 2. ENCABEZADO: Centrado y estable */
+/* --- HEADER Y NAVEGACIÓN (ESCRITORIO) --- */
 header {
-    background-color: var(--main-green); 
-    border-bottom: var(--border-thickness) solid var(--vandal-black); 
-    padding: 20px;
-    position: relative;
-    z-index: 1001;
-    width: 100%;
+    background-color: var(--main-green);
+    border-bottom: var(--border-thickness) solid var(--vandal-black);
+    padding: 30px 10px;
+    text-align: center;
 }
 
 header h1 {
-    font-size: clamp(1.8rem, 7vw, 3.5rem); /* Ajuste de tamaño para móviles */
-    margin: 0 auto;
+    font-size: 3.5rem;
     color: #fff;
-    -webkit-text-stroke: 1px var(--vandal-black);
-    text-align: center;
-    max-width: 85%; /* Deja espacio para el botón hamburguesa */
-}
-
-header p {
-    color: #fff;
-    margin: 5px 0 0 0;
-    text-align: center;
-    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-/* 3. NAVEGACIÓN: Centrada en escritorio */
-nav {
-    background-color: var(--vandal-black); 
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 15px;
-    border-bottom: 3px solid var(--main-green);
-    position: relative;
-    z-index: 100;
-}
-
-nav a {
-    color: #ffffff; 
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    padding: 5px 10px;
-    transition: color 0.2s;
-}
-
-nav a:hover {
-    color: var(--main-green);
-}
-
-/* 4. BOTÓN HAMBURGUESA: Posición fija sin empujar el título */
+/* EL BOTÓN HAMBURGUESA: Oculto por defecto en PC */
 .menu-toggle {
-    display: none; /* Oculto en PC */
+    display: none; 
     background: none;
     border: none;
     cursor: pointer;
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
     flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 22px;
+    gap: 5px;
+    width: 35px;
     z-index: 1002;
-    padding: 0;
 }
 
 .menu-toggle span {
@@ -103,71 +51,102 @@ nav a:hover {
     height: 4px;
     width: 100%;
     border: 1px solid var(--vandal-black);
-    display: block;
 }
 
-/* 5. CONTENEDOR PRINCIPAL: El secreto del centrado */
+/* NAVEGACIÓN: Visible y horizontal en PC */
+nav {
+    background-color: var(--vandal-black);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    border-bottom: 3px solid var(--main-green);
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--main-green);
+}
+
+/* --- CONTENEDOR DE CONTENIDO --- */
 .main-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 30px;
     padding: 20px;
-    max-width: 1200px; /* Ancho máximo para que no se estire infinito */
-    margin: 0 auto;    /* CENTRA TODO EL SITIO */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .noticia-principal {
     border: var(--border-thickness) solid var(--vandal-black);
-    padding: 20px;
-    background: #ffffff;
+    padding: 30px;
+    background: #fff;
     box-shadow: var(--shadow-size) var(--shadow-size) 0px var(--main-green);
-    width: 100%;
 }
 
 .img-noticia {
     width: 100%;
-    height: auto;
     border: var(--border-thickness) solid var(--vandal-black);
     margin: 20px 0;
-    display: block;
 }
 
-/* --- 6. DISEÑO RESPONSIVO (MÓVILES) --- */
+/* --- DISEÑO PARA CELULARES (MÁX 768PX) --- */
 @media (max-width: 768px) {
-    .main-container {
-        grid-template-columns: 1fr; /* Una sola columna: noticia arriba, relacionados abajo */
-        padding: 15px;
-    }
-
+    
+    /* Mostrar el botón de hamburguesa solo aquí */
     .menu-toggle {
-        display: flex; /* Aparece el botón */
+        display: flex; 
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Ocultar el menú horizontal y convertirlo en desplegable */
     nav {
-        display: none; /* Se oculta el menú horizontal */
+        display: none; /* Se oculta inicialmente */
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Aparece justo debajo del header verde */
+        top: 100%;
         left: 0;
         width: 100%;
-        padding: 20px;
-        box-shadow: 0px 10px 0px var(--main-green);
+        gap: 0;
+        padding: 0;
+        z-index: 1000;
     }
 
     nav.active {
-        display: flex; /* Se muestra al hacer clic */
-        animation: vandalSlide 0.3s ease-out forwards;
+        display: flex; /* Se muestra al dar click */
     }
 
-    .noticia-principal h1 {
-        font-size: 1.8rem; /* Tamaño manejable para celulares */
-        line-height: 1.1;
-    }
-
-    .relacionados {
-        margin-top: 20px;
-        box-shadow: 6px 6px 0px var(--vandal-black);
+    nav a {
+        padding: 15px;
+        border-bottom: 1px solid #222;
         width: 100%;
+        text-align: center;
+    }
+
+    .main-container {
+        grid-template-columns: 1fr; /* Una columna para que no se corte */
+        padding: 15px;
+    }
+
+    .noticia-principal {
+        padding: 15px;
+        box-shadow: 4px 4px 0px var(--main-green);
     }
 }
 
