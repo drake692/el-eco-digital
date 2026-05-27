@@ -269,82 +269,70 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* 1. Header flexible para mandar la hamburguesa a la derecha */
     header {
-        position: relative;
+        position: relative !important; /* Base para el menú flotante */
         display: flex;
-        justify-content: center; /* Título al centro */
-        align-items: center;
-        padding: 25px 15px;
-        z-index: 1001;
-    }
-
-    /* 2. Botón Hamburguesa a la derecha */
-    .menu-toggle {
-        display: flex;
-        position: absolute;
-        right: 15px; /* <--- Lo movemos a la derecha */
-        left: auto;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    /* 3. La Ventana pequeña de secciones */
-    nav {
-        display: none;
         flex-direction: column;
-        position: absolute;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+        position: absolute !important;
+        right: 15px;
+        top: 25px; /* Ajusta según la altura de tu header */
+        z-index: 1002;
+    }
+
+    /* LA VENTANA FLOTANTE */
+    nav {
+        display: none; 
+        flex-direction: column;
         
-        /* Posición tipo pop-up a la derecha */
-        top: 85%;           /* Un poco abajo del header */
-        right: 15px;        /* Alineado con el botón */
-        left: auto;
-        width: 180px;       /* Ancho fijo de ventanita */
+        /* Esto lo saca del flujo y lo hace flotar */
+        position: absolute !important; 
+        top: 100% !important; /* Justo debajo del borde verde del header */
+        right: 10px !important;
+        left: auto !important;
         
-        background-color: var(--vandal-black);
-        border: 3px solid var(--main-green); /* Borde estilo Vandal */
-        z-index: 9999;
+        width: 180px !important;
+        background-color: var(--vandal-black) !important;
+        border: 3px solid var(--main-green) !important;
+        
+        /* Z-INDEX ALTÍSIMO para estar sobre las noticias */
+        z-index: 9999 !important; 
         padding: 5px 0;
-        box-shadow: 6px 6px 0px rgba(0,0,0,0.8); /* Sombra sólida */
+        box-shadow: 8px 8px 0px rgba(0,0,0,0.9);
     }
 
     nav.active {
-        display: flex;
-        animation: vandalPop 0.2s ease-out; /* Animación de brote */
+        display: flex !important;
+        animation: vandalPop 0.2s ease-out;
     }
 
     nav a {
         padding: 12px 15px;
         text-align: left;
-        border-bottom: 1px solid #222;
-        font-size: 0.85rem;
+        border-bottom: 1px solid #333;
+        font-size: 0.9rem;
+        color: #fff !important;
+        text-transform: uppercase;
         width: 100%;
-        color: #fff;
-        text-decoration: none;
         display: block;
     }
 
-    nav a:last-child {
-        border-bottom: none;
-    }
-
-    nav a:hover {
-        background-color: var(--main-green);
-    }
-
-    /* Evitar que el contenido se mueva */
+    /* Asegura que el contenedor de noticias no suba ni se mueva */
     .main-container {
-        grid-template-columns: 1fr;
-        padding: 15px;
+        display: block !important;
         position: relative;
-        z-index: 1;
+        z-index: 1; /* Nivel bajo */
     }
 
     header h1 {
         font-size: 1.5rem;
     }
 }
-
 /* Animación tipo ventana emergente */
 @keyframes vandalPop {
     from { 
