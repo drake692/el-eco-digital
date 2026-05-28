@@ -29,20 +29,55 @@
     </header>
     <div class="main-container">
         <main class="noticia-principal">
-            <span class="tag">Web</span>
-            <p class="fecha-publicacion">Publicado: 29 MAY 2026</p>
-            
-            <h1>Cómo el CSS moderno está matando a las imágenes pesadas</h1>
-            
-            <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/10/optimize-css.jpeg" alt="CSS Web" class="img-noticia">
-            
-            <p class="subtitulo">Gradientes, formas geométricas y animaciones nativas están haciendo que las imágenes de fondo sean cosa del pasado.</p>
-
-            <div class="contenido-texto">
-                <p>Con la llegada de funciones modernas, los diseñadores web ya no necesitan cargar archivos .png o .jpg pesados para lograr efectos visuales impactantes. Esto no solo mejora la estética, sino que optimiza el rendimiento global.</p>
+            <!-- NOTICIA PRINCIPAL ORIGINAL -->
+            <article class="noticia-bloque-completo">
+                <span class="tag">Web</span>
+                <p class="fecha-publicacion">Publicado: 29 MAY 2026</p>
                 
-                <p>Esto resulta en una web mucho más rápida, accesible y ecológica al reducir drásticamente el consumo de datos y la carga en los servidores alrededor del mundo.</p>
-            </div>
+                <h1>Cómo el CSS moderno está matando a las imágenes pesadas</h1>
+                
+                <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/10/optimize-css.jpeg" alt="CSS Web" class="img-noticia">
+                
+                <p class="subtitulo">Gradientes, formas geométricas y animaciones nativas están haciendo que las imágenes de fondo sean cosa del pasado.</p>
+
+                <div class="contenido-texto">
+                    <p>Con la llegada de funciones modernas, los diseñadores web ya no necesitan cargar archivos .png o .jpg pesados para lograr efectos visuales impactantes. Esto no solo mejora la estética, sino que optimiza el rendimiento global.</p>
+                    
+                    <p>Esto resulta en una web mucho más rápida, accesible y ecológica al reducir drásticamente el consumo de datos y la carga en los servidores alrededor del mundo.</p>
+                </div>
+            </article>
+
+            <!-- NUEVA NOTICIA 1 (ABAJO DE LA PRINCIPAL) -->
+            <article class="noticia-bloque-completo" style="margin-top: 40px; border-top: 2px solid #eee; padding-top: 30px;">
+                <span class="tag">Diseño</span>
+                <p class="fecha-publicacion">Publicado: 28 MAY 2026</p>
+                
+                <h2>Adoptando el diseño fluido: Maquetación sin Media Queries</h2>
+                <p class="subtitulo">Las nuevas funciones matemáticas de CSS permiten interfaces adaptables con líneas de código mínimas.</p>
+                
+                <img src="https://unsplash.com" alt="Diseño web UI" class="img-noticia">
+                
+                <div class="contenido-texto">
+                    <p>El uso extensivo de condicionales por tamaño de pantalla está disminuyendo gracias a herramientas como `clamp()`, `min()` y `max()`. Estas funciones calculan tipografías y espacios de forma dinámica según el espacio disponible en el navegador.</p>
+                    <p>Esta metodología reduce el peso de las hojas de estilo y mitiga los errores de renderizado en dispositivos móviles intermedios, unificando la experiencia de usuario sin sacrificar la libertad creativa de los maquetadores.</p>
+                </div>
+            </article>
+
+            <!-- NUEVA NOTICIA 2 (ABAJO DE LA PRINCIPAL) -->
+            <article class="noticia-bloque-completo" style="margin-top: 40px; border-top: 2px solid #eee; padding-top: 30px;">
+                <span class="tag">Rendimiento</span>
+                <p class="fecha-publicacion">Publicado: 28 MAY 2026</p>
+                
+                <h2>Motores de renderizado nativos: El fin de las librerías de animación masivas</h2>
+                <p class="subtitulo">La optimización de las transiciones CSS por hardware desplaza el uso de frameworks pesados de JavaScript.</p>
+                
+                <img src="https://unsplash.com" alt="Código de programación" class="img-noticia">
+                
+                <div class="contenido-texto">
+                    <p>Las animaciones complejas en la web ya no requieren la carga obligatoria de dependencias externas que ralentizan el hilo principal de procesamiento. La arquitectura de navegadores actuales procesa efectos visuales directamente en la tarjeta gráfica.</p>
+                    <p>Al delegar estas tareas interactivas al CSS nativo, los desarrolladores consiguen una tasa de refresco constante de 60 cuadros por segundo, incluso en teléfonos inteligentes de gama de entrada o conexiones de red inestables.</p>
+                </div>
+            </article>
         </main>
 
         <aside class="relacionados">
@@ -91,3 +126,4 @@
     </script>
 </body>
 </html>
+
