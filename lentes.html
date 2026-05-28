@@ -29,20 +29,55 @@
 
     <div class="main-container">
         <main class="noticia-principal">
-            <span class="tag">Gadgets</span>
-            <p class="fecha-publicacion">Publicado: 29 MAY 2026</p>
+            <!-- NOTICIA PRINCIPAL ORIGINAL -->
+            <article class="noticia-bloque-completo">
+                <span class="tag">Gadgets</span>
+                <p class="fecha-publicacion">Publicado: 29 MAY 2026</p>
 
-            <h1>Nuevos lentes de realidad aumentada llegan al mercado</h1>
-            
-            <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA" class="img-noticia">
-            
-            <p class="subtitulo">La espera ha terminado: la información digital se integra directamente en tu campo de visión natural.</p>
-
-            <div class="contenido-texto">
-                <p>Estos dispositivos prometen integrar nuestras notificaciones, mapas y traductores en tiempo real directamente frente a nuestros ojos. Expertos aseguran que este es el primer paso real para reemplazar finalmente a los smartphones en la próxima década.</p>
+                <h1>Nuevos lentes de realidad aumentada llegan al mercado</h1>
                 
-                <p>La miniaturización de los componentes ha permitido que el diseño sea casi indistinguible de unos lentes convencionales, eliminando la barrera estética que frenó a modelos anteriores.</p>
-            </div>
+                <img src="https://revistamercado.do/wp-content/uploads/2024/09/gafas-de-realidad-aumentada-meta-orion.jpg" alt="Lentes RA" class="img-noticia">
+                
+                <p class="subtitulo">La espera ha terminado: la información digital se integra directamente en tu campo de visión natural.</p>
+
+                <div class="contenido-texto">
+                    <p>Estos dispositivos prometen integrar nuestras notificaciones, mapas y traductores en tiempo real directamente frente a nuestros ojos. Expertos aseguran que este es el primer paso real para reemplazar finalmente a los smartphones en la próxima década.</p>
+                    
+                    <p>La miniaturización de los componentes ha permitido que el diseño sea casi indistinguible de unos lentes convencionales, eliminando la barrera estética que frenó a modelos anteriores.</p>
+                </div>
+            </article>
+
+            <!-- NUEVA NOTICIA 1 (ABAJO DE LA PRINCIPAL) -->
+            <article class="noticia-bloque-completo" style="margin-top: 40px; border-top: 2px solid #eee; padding-top: 30px;">
+                <span class="tag">Wearables</span>
+                <p class="fecha-publicacion">Publicado: 28 MAY 2026</p>
+                
+                <h2>Anillos inteligentes: El control gestual definitivo para interfaces ópticas</h2>
+                <p class="subtitulo">Dispositivos de alta precisión por inducción magnética permiten interactuar con menús flotantes sin tocar pantallas.</p>
+                
+                <img src="https://unsplash.com" alt="Tecnología vestible inteligente" class="img-noticia">
+                
+                <div class="contenido-texto">
+                    <p>La interacción con los nuevos lentes ópticos encuentra su complemento ideal en la tecnología dactilar. Los microanillos de última generación detectan la presión muscular y los micromovimientos de los dedos para seleccionar elementos en entornos virtuales con total discreción.</p>
+                    <p>Esta combinación de hardware elimina la necesidad de comandos de voz en espacios públicos, garantizando una navegación privada, fluida y sumamente intuitiva a través del ecosistema digital inmersivo.</p>
+                </div>
+            </article>
+
+            <!-- NUEVA NOTICIA 2 (ABAJO DE LA PRINCIPAL) -->
+            <article class="noticia-bloque-completo" style="margin-top: 40px; border-top: 2px solid #eee; padding-top: 30px;">
+                <span class="tag">Óptica</span>
+                <p class="fecha-publicacion">Publicado: 28 MAY 2026</p>
+                
+                <h2>Pantallas de micro-proyección: La batalla por los lúmenes en exteriores</h2>
+                <p class="subtitulo">Nuevas guías de onda ópticas logran nitidez total bajo la luz solar directa sin agotar la batería.</p>
+                
+                <img src="https://unsplash.com" alt="Luz láser y óptica avanzada" class="img-noticia">
+                
+                <div class="contenido-texto">
+                    <p>El mayor reto de los dispositivos de visualización portátiles ha sido resuelto mediante la integración de emisores microLED optimizados. Los nuevos lentes proyectan imágenes con un contraste dinámico adaptativo que responde instantáneamente a los destellos del entorno.</p>
+                    <p>Gracias a este avance en ingeniería de materiales, los textos informativos y mapas virtuales se mantienen perfectamente legibles tanto en interiores oscuros como en exteriores con alta radiación solar, reduciendo el consumo energético a la mitad.</p>
+                </div>
+            </article>
         </main>
 
         <aside class="relacionados">
@@ -83,7 +118,6 @@
             e.stopPropagation();
         });
 
-        // Cerrar menú al tocar fuera (imprescindible en móvil)
         document.addEventListener('click', (e) => {
             if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('active');
@@ -92,3 +126,4 @@
     </script>
 </body>
 </html>
+
